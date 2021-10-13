@@ -45,7 +45,7 @@ final class DefaultRequestBuilderTests: XCTestCase {
         let networkConfiguration = NetworkConfiguration(
             urlProvider: urlProviderSpy
         )
-        let serviceGroup: ServiceGroup = .vuttr
+        let serviceGroup: ServiceGroup = .tvmaze
         let request = HTTPRequest(baseURL: .serviceGroup(serviceGroup), method: .get)
         let sut = DefaultRequestBuilder(
             request: request,

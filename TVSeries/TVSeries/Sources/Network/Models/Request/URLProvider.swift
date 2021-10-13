@@ -10,7 +10,7 @@ import Foundation
 /// Defines a service group to provide URLs
 /// A ServiceGroup is a sum of endpoints that exist on the applications context.
 enum ServiceGroup {
-    case vuttr
+    case tvmaze
 }
 
 /// Defines a  provider of URLs
@@ -42,15 +42,15 @@ final class DefaultURLProvider: URLProvider {
         var url: String
 
         switch group {
-        case .vuttr:
-            url = getVuttrURL()
+        case .tvmaze:
+            url = getTvmazeURL()
         }
-        return http + url
+        return https + url
     }
 
     // MARK: - Private Methods
 
-    private func getVuttrURL() -> String {
-        return "localhost:3000"
+    private func getTvmazeURL() -> String {
+        return "api.tvmaze.com"
     }
 }

@@ -37,6 +37,8 @@
 		BFEDFA57271774D200C11995 /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEDFA56271774D200C11995 /* URLSessionHTTPClientTests.swift */; };
 		BFEDFA592717753800C11995 /* DefaultResponseDecoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEDFA582717753800C11995 /* DefaultResponseDecoderTests.swift */; };
 		BFEDFA5B2717762700C11995 /* DefaultRequestBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEDFA5A2717762700C11995 /* DefaultRequestBuilderTests.swift */; };
+		BFEDFA6027177AF400C11995 /* SeriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEDFA5F27177AF400C11995 /* SeriesService.swift */; };
+		BFEDFA6227177B6A00C11995 /* SeriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEDFA6127177B6A00C11995 /* SeriesRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		BFEDFA56271774D200C11995 /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
 		BFEDFA582717753800C11995 /* DefaultResponseDecoderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultResponseDecoderTests.swift; sourceTree = "<group>"; };
 		BFEDFA5A2717762700C11995 /* DefaultRequestBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRequestBuilderTests.swift; sourceTree = "<group>"; };
+		BFEDFA5F27177AF400C11995 /* SeriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesService.swift; sourceTree = "<group>"; };
+		BFEDFA6127177B6A00C11995 /* SeriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,9 +261,27 @@
 		BFEDFA5C271776E600C11995 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				BFEDFA5D27177A4B00C11995 /* Services */,
 				BFEDFA1827175E1E00C11995 /* Network */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		BFEDFA5D27177A4B00C11995 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BFEDFA5E27177A5B00C11995 /* Entities */,
+				BFEDFA5F27177AF400C11995 /* SeriesService.swift */,
+				BFEDFA6127177B6A00C11995 /* SeriesRequest.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BFEDFA5E27177A5B00C11995 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -380,7 +402,9 @@
 				BFEDFA1B27175E3B00C11995 /* URLSessionHTTPClient.swift in Sources */,
 				BFEDFA3A27175FF500C11995 /* DefaultRequestBuilder.swift in Sources */,
 				BFEDFA2F27175F7E00C11995 /* URLParameters.swift in Sources */,
+				BFEDFA6227177B6A00C11995 /* SeriesRequest.swift in Sources */,
 				BFEDFA3527175FAF00C11995 /* HTTPRequest.swift in Sources */,
+				BFEDFA6027177AF400C11995 /* SeriesService.swift in Sources */,
 				BFEDFA2027175EBA00C11995 /* Status.swift in Sources */,
 				BFEDFA2B27175F4B00C11995 /* BaseURL.swift in Sources */,
 				BFEDFA542717748300C11995 /* JSONConvertible.swift in Sources */,
