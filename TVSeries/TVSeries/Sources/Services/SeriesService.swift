@@ -15,15 +15,15 @@ enum SeriesServiceError: Error {
 protocol SeriesServiceProvider {
     func getSeriesData(
         with page: Int,
-        then handle: @escaping (Result<[Int], SeriesServiceError>) -> Void
+        then handle: @escaping (Result<[SeriesResponseEntity], SeriesServiceError>) -> Void
     )
     func getEpisodesData(
         with serieID: Int,
-        then handle: @escaping (Result<[Int], SeriesServiceError>) -> Void
+        then handle: @escaping (Result<[EpisodesResponseEntity], SeriesServiceError>) -> Void
     )
     func search(
         showName: String,
-        then handle: @escaping (Result<[Int], SeriesServiceError>) -> Void
+        then handle: @escaping (Result<[SearchResponseEntity], SeriesServiceError>) -> Void
     )
 }
 
@@ -43,7 +43,7 @@ final class SeriesService: SeriesServiceProvider {
     
     func getSeriesData(
         with page: Int,
-        then handle: @escaping (Result<[Int], SeriesServiceError>) -> Void
+        then handle: @escaping (Result<[SeriesResponseEntity], SeriesServiceError>) -> Void
     ) {
         let request = SeriesRequest.index(page: page)
         execute(request: request, then: handle)
@@ -51,7 +51,7 @@ final class SeriesService: SeriesServiceProvider {
     
     func getEpisodesData(
         with serieID: Int,
-        then handle: @escaping (Result<[Int], SeriesServiceError>) -> Void
+        then handle: @escaping (Result<[EpisodesResponseEntity], SeriesServiceError>) -> Void
     ) {
         let request = SeriesRequest.episodes(serieID: serieID)
         execute(request: request, then: handle)
@@ -59,7 +59,7 @@ final class SeriesService: SeriesServiceProvider {
     
     func search(
         showName: String,
-        then handle: @escaping (Result<[Int], SeriesServiceError>) -> Void
+        then handle: @escaping (Result<[SearchResponseEntity], SeriesServiceError>) -> Void
     ) {
         let request = SeriesRequest.search(showName: showName)
         execute(request: request, then: handle)

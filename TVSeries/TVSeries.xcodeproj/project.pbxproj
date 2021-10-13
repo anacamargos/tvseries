@@ -39,6 +39,9 @@
 		BFEDFA5B2717762700C11995 /* DefaultRequestBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEDFA5A2717762700C11995 /* DefaultRequestBuilderTests.swift */; };
 		BFEDFA6027177AF400C11995 /* SeriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEDFA5F27177AF400C11995 /* SeriesService.swift */; };
 		BFEDFA6227177B6A00C11995 /* SeriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEDFA6127177B6A00C11995 /* SeriesRequest.swift */; };
+		BFEDFA64271782F500C11995 /* SeriesResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEDFA63271782F400C11995 /* SeriesResponseEntity.swift */; };
+		BFEDFA662717995B00C11995 /* EpisodesResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEDFA652717995B00C11995 /* EpisodesResponseEntity.swift */; };
+		BFEDFA682717996C00C11995 /* SearchResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEDFA672717996C00C11995 /* SearchResponseEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +90,9 @@
 		BFEDFA5A2717762700C11995 /* DefaultRequestBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRequestBuilderTests.swift; sourceTree = "<group>"; };
 		BFEDFA5F27177AF400C11995 /* SeriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesService.swift; sourceTree = "<group>"; };
 		BFEDFA6127177B6A00C11995 /* SeriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesRequest.swift; sourceTree = "<group>"; };
+		BFEDFA63271782F400C11995 /* SeriesResponseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesResponseEntity.swift; sourceTree = "<group>"; };
+		BFEDFA652717995B00C11995 /* EpisodesResponseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesResponseEntity.swift; sourceTree = "<group>"; };
+		BFEDFA672717996C00C11995 /* SearchResponseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponseEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +286,9 @@
 		BFEDFA5E27177A5B00C11995 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				BFEDFA63271782F400C11995 /* SeriesResponseEntity.swift */,
+				BFEDFA652717995B00C11995 /* EpisodesResponseEntity.swift */,
+				BFEDFA672717996C00C11995 /* SearchResponseEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -395,6 +404,7 @@
 				BFEDFA3127175F9000C11995 /* HTTPBody.swift in Sources */,
 				BFEDFA2227175ECB00C11995 /* NetworkResponse.swift in Sources */,
 				BFEDFA412717607500C11995 /* DefaultResponseDecoder.swift in Sources */,
+				BFEDFA682717996C00C11995 /* SearchResponseEntity.swift in Sources */,
 				BFEDFA3F2717606700C11995 /* NetworkResponseDecoder.swift in Sources */,
 				BFEDF9E927175AA700C11995 /* AppDelegate.swift in Sources */,
 				BFEDFA2927175F3B00C11995 /* HTTPMethod.swift in Sources */,
@@ -403,11 +413,13 @@
 				BFEDFA3A27175FF500C11995 /* DefaultRequestBuilder.swift in Sources */,
 				BFEDFA2F27175F7E00C11995 /* URLParameters.swift in Sources */,
 				BFEDFA6227177B6A00C11995 /* SeriesRequest.swift in Sources */,
+				BFEDFA662717995B00C11995 /* EpisodesResponseEntity.swift in Sources */,
 				BFEDFA3527175FAF00C11995 /* HTTPRequest.swift in Sources */,
 				BFEDFA6027177AF400C11995 /* SeriesService.swift in Sources */,
 				BFEDFA2027175EBA00C11995 /* Status.swift in Sources */,
 				BFEDFA2B27175F4B00C11995 /* BaseURL.swift in Sources */,
 				BFEDFA542717748300C11995 /* JSONConvertible.swift in Sources */,
+				BFEDFA64271782F500C11995 /* SeriesResponseEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
