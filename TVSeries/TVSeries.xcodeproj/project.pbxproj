@@ -124,7 +124,7 @@
 		BFEDF9E727175AA700C11995 /* TVSeries */ = {
 			isa = PBXGroup;
 			children = (
-				BFEDFA1827175E1E00C11995 /* Network */,
+				BFEDFA5C271776E600C11995 /* Sources */,
 				BFEDF9E827175AA700C11995 /* AppDelegate.swift */,
 				BFEDF9F127175AB100C11995 /* Assets.xcassets */,
 				BFEDF9F327175AB100C11995 /* LaunchScreen.storyboard */,
@@ -252,6 +252,14 @@
 				BFEDFA4E2717635100C11995 /* XCTestCase+MemoryLeakTracking.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BFEDFA5C271776E600C11995 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				BFEDFA1827175E1E00C11995 /* Network */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
