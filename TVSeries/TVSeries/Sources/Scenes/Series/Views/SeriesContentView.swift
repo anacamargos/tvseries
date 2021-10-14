@@ -28,6 +28,7 @@ final class SeriesContentView: CodedView {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
+        tableView.register(SeriesCell.self, forCellReuseIdentifier: SeriesCell.className)
         return tableView
     }()
     

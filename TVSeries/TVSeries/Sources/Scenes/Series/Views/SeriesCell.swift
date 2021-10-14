@@ -9,13 +9,23 @@ import UIKit
 
 final class SeriesCell: CodedTableViewCell {
     
+    // MARK: - Constants
+    
+    private enum ViewMetrics {
+        static let cornerRadius: CGFloat = 8
+        static let borderWidth: CGFloat = 1
+        static let grayAlpha: CGFloat = 0.3
+        static let imageWidth: CGFloat = 100
+        static let imageHeight: CGFloat = 120
+    }
+    
     // MARK: - Layout Components
 
     private let contentBackgroundView: UIView = {
         let view = UIView()
-        view.layer.cornerRadius = 10
-        view.layer.borderWidth = 2
-        view.layer.borderColor = UIColor.lightGray.cgColor
+        view.layer.cornerRadius = ViewMetrics.cornerRadius
+        view.layer.borderWidth = ViewMetrics.borderWidth
+        view.layer.borderColor = UIColor.lightGray.withAlphaComponent(ViewMetrics.grayAlpha).cgColor
         view.clipsToBounds = true
         return view
     }()
@@ -88,8 +98,8 @@ final class SeriesCell: CodedTableViewCell {
             top: contentBackgroundView.topAnchor,
             leading: contentBackgroundView.leadingAnchor,
             bottom: contentBackgroundView.bottomAnchor,
-            widthConstant: 100,
-            heightConstant: 120
+            widthConstant: ViewMetrics.imageWidth,
+            heightConstant: ViewMetrics.imageHeight
         )
     }
 
