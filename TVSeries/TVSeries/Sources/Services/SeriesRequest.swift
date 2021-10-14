@@ -9,7 +9,7 @@ import Foundation
 
 enum SeriesRequest: NetworkRequest {
 
-    case index(page: Int)
+    case series(page: Int)
     case episodes(serieID: Int)
     case search(serieName: String)
 
@@ -17,7 +17,7 @@ enum SeriesRequest: NetworkRequest {
 
     var path: String? {
         switch self {
-        case .index:
+        case .series:
             return "shows"
         case let .episodes(serieID):
             return "/shows/\(serieID)/episodes"

@@ -45,7 +45,7 @@ final class SeriesService: SeriesServiceProvider {
         with page: Int,
         then handle: @escaping (Result<[SeriesResponseEntity], SeriesServiceError>) -> Void
     ) {
-        let request = SeriesRequest.index(page: page)
+        let request = SeriesRequest.series(page: page)
         execute(request: request, then: handle)
     }
     
