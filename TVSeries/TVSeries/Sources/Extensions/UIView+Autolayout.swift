@@ -153,36 +153,4 @@ extension UIView {
         anchorCenterXToSuperview()
         anchorCenterYToSuperview()
     }
-
-    /// Returns the `safeAreaLayoutGuide.trailingAnchor`, if available,
-    /// otherwhise, returns `trailingAnchor`
-    var safeTrailingAnchor: NSLayoutXAxisAnchor {
-        safeAreaLayoutGuide.trailingAnchor
-    }
-
-    /// Returns the `safeAreaLayoutGuide.leadingAnchor`, if available,
-    /// otherwhise, returns `leadingAnchor`
-    var safeLeadingAnchor: NSLayoutXAxisAnchor {
-        safeAreaLayoutGuide.leadingAnchor
-    }
-
-    /// Returns the `safeAreaLayoutGuide.bottomAnchor`, if available,
-    /// otherwhise, returns `bottomAnchor`
-    var safeBottomAnchor: NSLayoutYAxisAnchor {
-        return safeAreaLayoutGuide.bottomAnchor
-    }
-
-    /// Returns the `safeAreaLayoutGuide.topAnchor`, if available,
-    /// otherwhise, returns `topAnchor`
-    var safeTopAnchor: NSLayoutYAxisAnchor {
-        return safeAreaLayoutGuide.topAnchor
-    }
-
-    /// Simplifies layouting with a constraint array
-    /// - Parameter constraints: the constraints to apply to the view
-    func layout(using constraints: [NSLayoutConstraint]) {
-        translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate(constraints)
-    }
 }
-

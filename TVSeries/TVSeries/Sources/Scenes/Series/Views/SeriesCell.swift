@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class SeriesCell: CodedTableViewCell {
     
@@ -131,6 +132,16 @@ final class SeriesCell: CodedTableViewCell {
     
     func setupViewData(_ viewData: Series.Serie) {
         seriesNameLabel.text = viewData.name
-        seriesSummaryLabel.text = viewData.summary
+        seriesSummaryLabel.text = viewData.summary.htmlToString
+        if let imageURL = viewData.imageURL {
+            seriesImageView.kf.indicatorType = .activity
+            seriesImageView.kf.setImage(with: imageURL)
+        } else {
+            seriesImageView.image = .init()
+        }
+    }
+    
+    func cancelDownload() {
+        seriesImageView.kf.cancelDownloadTask()
     }
 }

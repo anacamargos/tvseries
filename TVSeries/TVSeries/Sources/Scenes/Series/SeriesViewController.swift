@@ -61,7 +61,6 @@ final class SeriesViewController: UIViewController {
 
 extension SeriesViewController: SeriesDisplayLogic {
     
-    
 }
 
 extension SeriesViewController: UISearchBarDelegate {
