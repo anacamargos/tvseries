@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		BF96E4632718A3F90084654A /* SeriesServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF96E4622718A3F90084654A /* SeriesServiceTests.swift */; };
 		BF96E4672718B7E30084654A /* SeriesUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF96E4662718B7E30084654A /* SeriesUseCaseTests.swift */; };
+		BF96E4692718BC540084654A /* SeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF96E4682718BC540084654A /* SeriesViewController.swift */; };
+		BF96E46C2718BC9D0084654A /* SeriesContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF96E46B2718BC9D0084654A /* SeriesContentView.swift */; };
+		BF96E46F2718BCC40084654A /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF96E46E2718BCC40084654A /* ViewCode.swift */; };
+		BF96E4712718BCD80084654A /* UIView+Autolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF96E4702718BCD80084654A /* UIView+Autolayout.swift */; };
+		BF96E4742718BF860084654A /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF96E4732718BF860084654A /* Metrics.swift */; };
+		BF96E4762718C69A0084654A /* SeriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF96E4752718C69A0084654A /* SeriesCell.swift */; };
+		BF96E4782718CA7B0084654A /* SeriesModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF96E4772718CA7B0084654A /* SeriesModels.swift */; };
+		BF96E47A2718CA920084654A /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF96E4792718CA920084654A /* UITableViewExtensions.swift */; };
+		BF96E47C2718CAA20084654A /* NSObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF96E47B2718CAA20084654A /* NSObjectExtensions.swift */; };
 		BFEDF9E927175AA700C11995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEDF9E827175AA700C11995 /* AppDelegate.swift */; };
 		BFEDF9F227175AB100C11995 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFEDF9F127175AB100C11995 /* Assets.xcassets */; };
 		BFEDF9F527175AB100C11995 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFEDF9F327175AB100C11995 /* LaunchScreen.storyboard */; };
@@ -61,6 +70,15 @@
 /* Begin PBXFileReference section */
 		BF96E4622718A3F90084654A /* SeriesServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesServiceTests.swift; sourceTree = "<group>"; };
 		BF96E4662718B7E30084654A /* SeriesUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesUseCaseTests.swift; sourceTree = "<group>"; };
+		BF96E4682718BC540084654A /* SeriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesViewController.swift; sourceTree = "<group>"; };
+		BF96E46B2718BC9D0084654A /* SeriesContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesContentView.swift; sourceTree = "<group>"; };
+		BF96E46E2718BCC40084654A /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
+		BF96E4702718BCD80084654A /* UIView+Autolayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Autolayout.swift"; sourceTree = "<group>"; };
+		BF96E4732718BF860084654A /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
+		BF96E4752718C69A0084654A /* SeriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesCell.swift; sourceTree = "<group>"; };
+		BF96E4772718CA7B0084654A /* SeriesModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesModels.swift; sourceTree = "<group>"; };
+		BF96E4792718CA920084654A /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
+		BF96E47B2718CAA20084654A /* NSObjectExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtensions.swift; sourceTree = "<group>"; };
 		BFEDF9E527175AA700C11995 /* TVSeries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVSeries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEDF9E827175AA700C11995 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFEDF9F127175AB100C11995 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -143,6 +161,34 @@
 				BF96E4662718B7E30084654A /* SeriesUseCaseTests.swift */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		BF96E46A2718BC920084654A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BF96E46B2718BC9D0084654A /* SeriesContentView.swift */,
+				BF96E4752718C69A0084654A /* SeriesCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BF96E46D2718BCBC0084654A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BF96E46E2718BCC40084654A /* ViewCode.swift */,
+				BF96E4702718BCD80084654A /* UIView+Autolayout.swift */,
+				BF96E4792718CA920084654A /* UITableViewExtensions.swift */,
+				BF96E47B2718CAA20084654A /* NSObjectExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BF96E4722718BF7C0084654A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				BF96E4732718BF860084654A /* Metrics.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		BFEDF9DC27175AA700C11995 = {
@@ -301,6 +347,8 @@
 		BFEDFA5C271776E600C11995 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				BF96E4722718BF7C0084654A /* UI */,
+				BF96E46D2718BCBC0084654A /* Extensions */,
 				BFEDFA69271799B300C11995 /* Scenes */,
 				BFEDFA5D27177A4B00C11995 /* Services */,
 				BFEDFA1827175E1E00C11995 /* Network */,
@@ -339,7 +387,10 @@
 		BFEDFA6A271799B800C11995 /* Series */ = {
 			isa = PBXGroup;
 			children = (
+				BF96E46A2718BC920084654A /* Views */,
 				BFEDFA6B271799C400C11995 /* Domain */,
+				BF96E4682718BC540084654A /* SeriesViewController.swift */,
+				BF96E4772718CA7B0084654A /* SeriesModels.swift */,
 			);
 			path = Series;
 			sourceTree = "<group>";
@@ -464,23 +515,31 @@
 				BFEDFA7027179B0400C11995 /* SeriesUseCaseModels.swift in Sources */,
 				BFEDFA3327175FA000C11995 /* NetworkConfiguration.swift in Sources */,
 				BFEDFA3C2717603300C11995 /* Constants.swift in Sources */,
+				BF96E4692718BC540084654A /* SeriesViewController.swift in Sources */,
+				BF96E47A2718CA920084654A /* UITableViewExtensions.swift in Sources */,
+				BF96E4782718CA7B0084654A /* SeriesModels.swift in Sources */,
 				BFEDFA6D271799D100C11995 /* SeriesUseCase.swift in Sources */,
+				BF96E47C2718CAA20084654A /* NSObjectExtensions.swift in Sources */,
 				BFEDFA2727175F2800C11995 /* NetworkRequest.swift in Sources */,
 				BFEDFA442717609D00C11995 /* NetworkDispatcher.swift in Sources */,
 				BFEDFA1D27175E5A00C11995 /* URLSessionProvider.swift in Sources */,
 				BFEDFA46271760AC00C11995 /* DefaultNetworkDispatcher.swift in Sources */,
 				BFEDFA3827175FE500C11995 /* NetworkRequestBuilder.swift in Sources */,
 				BFEDFA2D27175F6400C11995 /* URLProvider.swift in Sources */,
+				BF96E46C2718BC9D0084654A /* SeriesContentView.swift in Sources */,
 				BFEDFA3127175F9000C11995 /* HTTPBody.swift in Sources */,
+				BF96E4742718BF860084654A /* Metrics.swift in Sources */,
 				BFEDFA2227175ECB00C11995 /* NetworkResponse.swift in Sources */,
 				BFEDFA412717607500C11995 /* DefaultResponseDecoder.swift in Sources */,
 				BFEDFA682717996C00C11995 /* SearchResponseEntity.swift in Sources */,
 				BFEDFA3F2717606700C11995 /* NetworkResponseDecoder.swift in Sources */,
 				BFEDF9E927175AA700C11995 /* AppDelegate.swift in Sources */,
 				BFEDFA2927175F3B00C11995 /* HTTPMethod.swift in Sources */,
+				BF96E4762718C69A0084654A /* SeriesCell.swift in Sources */,
 				BFEDFA2427175EEE00C11995 /* NetworkError.swift in Sources */,
 				BFEDFA1B27175E3B00C11995 /* URLSessionHTTPClient.swift in Sources */,
 				BFEDFA3A27175FF500C11995 /* DefaultRequestBuilder.swift in Sources */,
+				BF96E4712718BCD80084654A /* UIView+Autolayout.swift in Sources */,
 				BFEDFA2F27175F7E00C11995 /* URLParameters.swift in Sources */,
 				BFEDFA6227177B6A00C11995 /* SeriesRequest.swift in Sources */,
 				BFEDFA662717995B00C11995 /* EpisodesResponseEntity.swift in Sources */,
@@ -490,6 +549,7 @@
 				BFEDFA2B27175F4B00C11995 /* BaseURL.swift in Sources */,
 				BFEDFA542717748300C11995 /* JSONConvertible.swift in Sources */,
 				BFEDFA64271782F500C11995 /* SeriesResponseEntity.swift in Sources */,
+				BF96E46F2718BCC40084654A /* ViewCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
