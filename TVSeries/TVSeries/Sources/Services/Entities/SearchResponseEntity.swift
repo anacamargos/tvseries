@@ -9,5 +9,5 @@ import Foundation
 
 struct SearchResponseEntity: Codable {
     let score: Double
-    let show: SeriesResponseEntity
+    let serie: SeriesResponseEntity
 }

@@ -22,7 +22,7 @@ protocol SeriesServiceProvider {
         then handle: @escaping (Result<[EpisodesResponseEntity], SeriesServiceError>) -> Void
     )
     func search(
-        showName: String,
+        serieName: String,
         then handle: @escaping (Result<[SearchResponseEntity], SeriesServiceError>) -> Void
     )
 }
@@ -58,10 +58,10 @@ final class SeriesService: SeriesServiceProvider {
     }
     
     func search(
-        showName: String,
+        serieName: String,
         then handle: @escaping (Result<[SearchResponseEntity], SeriesServiceError>) -> Void
     ) {
-        let request = SeriesRequest.search(showName: showName)
+        let request = SeriesRequest.search(serieName: serieName)
         execute(request: request, then: handle)
     }
     

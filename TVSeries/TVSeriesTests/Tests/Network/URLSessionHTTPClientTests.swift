@@ -31,7 +31,7 @@ final class URLSessionHTTPClientTests: XCTestCase {
         let urlSessionMock = URLSessionMock()
         urlSessionMock.dataTaskResultToBeReturned = (nil, nil, nil)
         let sut = makeSUT(session: urlSessionMock)
-        let httpRequest = HTTPRequest(baseURL: .string("http://a-url.com"), method: .get)
+        let httpRequest = HTTPRequest(baseURL: .string("https://a-url.com"), method: .get)
         let expectedError = NetworkError(.internal(.invalidHTTPResponse))
 
         // When
@@ -50,7 +50,7 @@ final class URLSessionHTTPClientTests: XCTestCase {
         let nsError = NSError(domain: "", code: 400)
         urlSessionMock.dataTaskResultToBeReturned = (nil, nil, nsError)
         let sut = makeSUT(session: urlSessionMock)
-        let httpRequest = HTTPRequest(baseURL: .string("http://a-url.com"), method: .get)
+        let httpRequest = HTTPRequest(baseURL: .string("https://a-url.com"), method: .get)
         let expectedError = NetworkError(requestError: .http(400), rawError: nsError)
 
         // When
@@ -67,11 +67,11 @@ final class URLSessionHTTPClientTests: XCTestCase {
         // Given
         let urlSessionMock = URLSessionMock()
         // swiftlint:disable:next force_unwrapping
-        let anyURL = URL(string: "http:a-url.com")!
+        let anyURL = URL(string: "https:a-url.com")!
         let response = HTTPURLResponse(url: anyURL, statusCode: 200, httpVersion: nil, headerFields: nil)
         urlSessionMock.dataTaskResultToBeReturned = (nil, response, nil)
         let sut = makeSUT(session: urlSessionMock)
-        let httpRequest = HTTPRequest(baseURL: .string("http://a-url.com"), method: .get)
+        let httpRequest = HTTPRequest(baseURL: .string("https://a-url.com"), method: .get)
         let expectedResponse = NetworkResponse(status: .http(200), data: nil)
 
         // When

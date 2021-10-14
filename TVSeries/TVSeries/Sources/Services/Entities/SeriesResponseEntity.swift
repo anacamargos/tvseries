@@ -17,7 +17,7 @@ struct SeriesResponseEntity: Codable {
     
     struct Schedule: Codable {
         let time: String
-        let days: [String]
+        let days: [Day]
     }
 }
 
@@ -25,4 +25,14 @@ enum CommonEntity {
     struct Image: Codable {
         let medium, original: String
     }
+}
+
+enum Day: String, Codable {
+    case friday = "Friday"
+    case monday = "Monday"
+    case saturday = "Saturday"
+    case sunday = "Sunday"
+    case thursday = "Thursday"
+    case tuesday = "Tuesday"
+    case wednesday = "Wednesday"
 }

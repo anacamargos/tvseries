@@ -11,7 +11,7 @@ enum SeriesRequest: NetworkRequest {
 
     case index(page: Int)
     case episodes(serieID: Int)
-    case search(showName: String)
+    case search(serieName: String)
 
     var baseURL: BaseURL { .serviceGroup(.tvmaze) }
 
