@@ -13,6 +13,10 @@ protocol SeriesContentViewProtocol: AnyObject {
 
 final class SeriesContentView: CodedView {
     
+    // MARK: - Dependencies
+    
+    private let onWillDisplayNewCells: (Int) -> Void
+    
     // MARK: - Properties
     
     private var viewState: Series.ViewState = .loading
@@ -24,7 +28,6 @@ final class SeriesContentView: CodedView {
         tableView.backgroundColor = .clear
         tableView.contentInset = .init(top: .zero, left: .zero, bottom: Metrics.Spacing.small, right: .zero)
         tableView.showsHorizontalScrollIndicator = false
-        tableView.showsVerticalScrollIndicator = false
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
@@ -34,9 +37,11 @@ final class SeriesContentView: CodedView {
     
     // MARK: - Initializers
 
-    override init(
-        frame: CGRect = .zero
+    init(
+        frame: CGRect = .zero,
+        onWillDisplayNewCells: @escaping (Int) -> Void
     ) {
+        self.onWillDisplayNewCells = onWillDisplayNewCells
         super.init(frame: frame)
         configureView()
     }
@@ -109,5 +114,14 @@ extension SeriesContentView: UITableViewDelegate, UITableViewDataSource {
         case .error:
             return .init()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let cell = cell as? SeriesCell
+        cell?.cancelDownload()
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        onWillDisplayNewCells(indexPath.row)
     }
 }

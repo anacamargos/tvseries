@@ -9,6 +9,13 @@ import Foundation
 
 enum Series {
     
+    enum Response {
+        case content(SeriesUseCaseModel)
+        case loading
+        case error
+        case empty
+    }
+    
     enum ViewState {
         case content(ViewData)
         case loading

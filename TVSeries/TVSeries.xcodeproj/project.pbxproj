@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		33FD93885F6B51C224444EF3 /* Pods_TVSeriesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7AF3A74555F802B49B1C53D /* Pods_TVSeriesTests.framework */; };
+		BF1BEE712719C7AE00ACD9C0 /* SeriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BEE702719C7AE00ACD9C0 /* SeriesPresenter.swift */; };
+		BF1BEE732719C91C00ACD9C0 /* SeriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BEE722719C91C00ACD9C0 /* SeriesInteractor.swift */; };
+		BF1BEE752719CBA100ACD9C0 /* SeriesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BEE742719CBA100ACD9C0 /* SeriesConfigurator.swift */; };
 		BF96E4632718A3F90084654A /* SeriesServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF96E4622718A3F90084654A /* SeriesServiceTests.swift */; };
 		BF96E4672718B7E30084654A /* SeriesUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF96E4662718B7E30084654A /* SeriesUseCaseTests.swift */; };
 		BF96E4692718BC540084654A /* SeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF96E4682718BC540084654A /* SeriesViewController.swift */; };
@@ -77,6 +80,9 @@
 		601B5B7D81FFFC59C6615095 /* Pods-TVSeriesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVSeriesTests.debug.xcconfig"; path = "Target Support Files/Pods-TVSeriesTests/Pods-TVSeriesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		696FA94B9DEC38E83C60FD3F /* Pods_TVSeries.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TVSeries.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF08D8A45ED41BBACCFE4E93 /* Pods-TVSeries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVSeries.debug.xcconfig"; path = "Target Support Files/Pods-TVSeries/Pods-TVSeries.debug.xcconfig"; sourceTree = "<group>"; };
+		BF1BEE702719C7AE00ACD9C0 /* SeriesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesPresenter.swift; sourceTree = "<group>"; };
+		BF1BEE722719C91C00ACD9C0 /* SeriesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesInteractor.swift; sourceTree = "<group>"; };
+		BF1BEE742719CBA100ACD9C0 /* SeriesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesConfigurator.swift; sourceTree = "<group>"; };
 		BF96E4622718A3F90084654A /* SeriesServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesServiceTests.swift; sourceTree = "<group>"; };
 		BF96E4662718B7E30084654A /* SeriesUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesUseCaseTests.swift; sourceTree = "<group>"; };
 		BF96E4682718BC540084654A /* SeriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesViewController.swift; sourceTree = "<group>"; };
@@ -417,6 +423,7 @@
 			isa = PBXGroup;
 			children = (
 				BFEDFA6A271799B800C11995 /* Series */,
+				BF1BEE722719C91C00ACD9C0 /* SeriesInteractor.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -428,6 +435,8 @@
 				BFEDFA6B271799C400C11995 /* Domain */,
 				BF96E4682718BC540084654A /* SeriesViewController.swift */,
 				BF96E4772718CA7B0084654A /* SeriesModels.swift */,
+				BF1BEE702719C7AE00ACD9C0 /* SeriesPresenter.swift */,
+				BF1BEE742719CBA100ACD9C0 /* SeriesConfigurator.swift */,
 			);
 			path = Series;
 			sourceTree = "<group>";
@@ -668,6 +677,7 @@
 				BF96E47A2718CA920084654A /* UITableViewExtensions.swift in Sources */,
 				BF96E4782718CA7B0084654A /* SeriesModels.swift in Sources */,
 				BFEDFA6D271799D100C11995 /* SeriesUseCase.swift in Sources */,
+				BF1BEE752719CBA100ACD9C0 /* SeriesConfigurator.swift in Sources */,
 				BF96E47C2718CAA20084654A /* NSObjectExtensions.swift in Sources */,
 				BFEDFA2727175F2800C11995 /* NetworkRequest.swift in Sources */,
 				BFEDFA442717609D00C11995 /* NetworkDispatcher.swift in Sources */,
@@ -688,6 +698,7 @@
 				BFA27C512718D35A00C01A7F /* StringExtensions.swift in Sources */,
 				BFEDFA2427175EEE00C11995 /* NetworkError.swift in Sources */,
 				BFEDFA1B27175E3B00C11995 /* URLSessionHTTPClient.swift in Sources */,
+				BF1BEE712719C7AE00ACD9C0 /* SeriesPresenter.swift in Sources */,
 				BFEDFA3A27175FF500C11995 /* DefaultRequestBuilder.swift in Sources */,
 				BF96E4712718BCD80084654A /* UIView+Autolayout.swift in Sources */,
 				BFEDFA2F27175F7E00C11995 /* URLParameters.swift in Sources */,
@@ -698,6 +709,7 @@
 				BFEDFA2027175EBA00C11995 /* Status.swift in Sources */,
 				BFEDFA2B27175F4B00C11995 /* BaseURL.swift in Sources */,
 				BFEDFA542717748300C11995 /* JSONConvertible.swift in Sources */,
+				BF1BEE732719C91C00ACD9C0 /* SeriesInteractor.swift in Sources */,
 				BFEDFA64271782F500C11995 /* SeriesResponseEntity.swift in Sources */,
 				BF96E46F2718BCC40084654A /* ViewCode.swift in Sources */,
 			);

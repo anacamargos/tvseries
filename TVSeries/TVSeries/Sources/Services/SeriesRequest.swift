@@ -29,4 +29,13 @@ enum SeriesRequest: NetworkRequest {
     var method: HTTPMethod {
         return .get
     }
+    
+    var urlParameters: URLParameters? {
+        switch self {
+        case let .series(page):
+            return .raw(["page": "\(page)"])
+        default:
+            return nil
+        }
+    }
 }

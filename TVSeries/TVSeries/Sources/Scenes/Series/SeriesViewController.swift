@@ -7,11 +7,16 @@
 
 import UIKit
  
-protocol SeriesDisplayLogic {
-    
+protocol SeriesDisplayLogic: AnyObject {
+    func displaySeriesViewState(_ viewState: Series.ViewState)
 }
 
 final class SeriesViewController: UIViewController {
+    
+    // MARK: - Dependencies
+    
+    private let interactor: SeriesBusinessLogic
+    private let mainDispatchQueue: DispatchQueueType
     
     // MARK: - View Components
 
@@ -19,7 +24,12 @@ final class SeriesViewController: UIViewController {
     
     // MARK: - Initializers
 
-    init() {
+    init(
+        interactor: SeriesBusinessLogic,
+        mainDispatchQueue: DispatchQueueType = DispatchQueue.main
+    ) {
+        self.interactor = interactor
+        self.mainDispatchQueue = mainDispatchQueue
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -32,11 +42,12 @@ final class SeriesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        interactor.onViewDidLoad()
         configureNavigationBar()
     }
 
     override func loadView() {
-        view = SeriesContentView()
+        view = SeriesContentView(onWillDisplayNewCells: { [weak self] row in self?.onWillDisplayNewCells(lasDisplayedRow: row) } )
         contentView = view as? SeriesContentViewProtocol
     }
     
@@ -55,12 +66,21 @@ final class SeriesViewController: UIViewController {
         searchController.searchBar.placeholder = "Search"
         navigationItem.searchController = searchController
     }
+    
+    private func onWillDisplayNewCells(lasDisplayedRow: Int) {
+        interactor.checkPagination(lastDisplayedRow: lasDisplayedRow)
+    }
 }
 
 // MARK: - SeriesDisplayLogic
 
 extension SeriesViewController: SeriesDisplayLogic {
     
+    func displaySeriesViewState(_ viewState: Series.ViewState) {
+        mainDispatchQueue.async {
+            self.contentView?.setupSeriesViewState(viewState)
+        }
+    }
 }
 
 extension SeriesViewController: UISearchBarDelegate {
@@ -71,5 +91,15 @@ extension SeriesViewController: UISearchBarDelegate {
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         
+    }
+}
+
+protocol DispatchQueueType {
+    func async(execute work: @escaping () -> Void)
+}
+
+extension DispatchQueue: DispatchQueueType {
+    func async(execute work: @escaping () -> Void) {
+        async(group: nil, qos: .unspecified, flags: [], execute: work)
     }
 }

@@ -13,7 +13,7 @@ enum SeriesUseCaseError: Error {
 
 struct SeriesUseCaseModel {
     
-    let data: [Serie]
+    var data: [Serie]
     
     struct Serie {
         let id: Int
