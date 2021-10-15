@@ -41,7 +41,7 @@ final class EmptyView: CodedView {
         label.font = .systemFont(ofSize: Metrics.FontSize.body.value, weight: .bold)
         label.numberOfLines = .zero
         label.textAlignment = .center
-        label.text = "Não achamos nenhuma série"
+        label.text = L10n.Series.emptyMessage
         return label
     }()
 

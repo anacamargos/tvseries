@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  TVSeries
+
+  Created by Ana Leticia Camargos on 15/10/21.
+  
+*/
+
+"series.title" = "Series";
+"series.search" = "Search";
+"series.empty_message" = "We didn't find any series";
+"series.error_message" = "Could not load the series. Try again";

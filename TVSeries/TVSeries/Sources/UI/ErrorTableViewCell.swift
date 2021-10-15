@@ -41,7 +41,7 @@ final class ErrorView: CodedView {
         label.font = .systemFont(ofSize: Metrics.FontSize.body.value, weight: .bold)
         label.numberOfLines = .zero
         label.textAlignment = .center
-        label.text = "Não foi possível continuar a chamada"
+        label.text = L10n.Series.errorMessage
         return label
     }()
 

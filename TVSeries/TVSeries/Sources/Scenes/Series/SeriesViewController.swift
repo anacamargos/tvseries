@@ -57,7 +57,7 @@ final class SeriesViewController: UIViewController {
 
     private func configureNavigationBar() {
         navigationController?.setNavigationBarHidden(false, animated: true)
-        title = "Series"
+        title = L10n.Series.title
         configureSearchBar()
     }
     
@@ -65,7 +65,7 @@ final class SeriesViewController: UIViewController {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
-        searchController.searchBar.placeholder = "Search"
+        searchController.searchBar.placeholder = L10n.Series.search
         navigationItem.searchController = searchController
     }
     

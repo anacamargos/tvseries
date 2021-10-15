@@ -88,7 +88,7 @@ final class SeriesContentView: CodedView {
 
     private func getEmptyCell(for indexPath: IndexPath) -> UITableViewCell {
         let cell: EmptyTableViewCell = tableView.reusableCell(for: EmptyTableViewCell.className, for: indexPath)
-        cell.setupLabelText("Vazio...")
+        cell.setupLabelText(L10n.Series.emptyMessage)
         return cell
     }
 
