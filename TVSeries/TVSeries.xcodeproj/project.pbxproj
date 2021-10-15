@@ -15,6 +15,11 @@
 		BF1BEE792719D0DA00ACD9C0 /* EmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BEE782719D0DA00ACD9C0 /* EmptyTableViewCell.swift */; };
 		BF1BEE7B2719D16800ACD9C0 /* ErrorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BEE7A2719D16800ACD9C0 /* ErrorTableViewCell.swift */; };
 		BF1BEE7D2719D1D100ACD9C0 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BEE7C2719D1D100ACD9C0 /* UIImageExtensions.swift */; };
+		BF1BEE7F2719EDC100ACD9C0 /* SeriesConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BEE7E2719EDC100ACD9C0 /* SeriesConfiguratorTests.swift */; };
+		BF1BEE812719EE6E00ACD9C0 /* SeriesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BEE802719EE6E00ACD9C0 /* SeriesPresenterTests.swift */; };
+		BF1BEE832719F02D00ACD9C0 /* DispatchQueueExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BEE822719F02D00ACD9C0 /* DispatchQueueExtensions.swift */; };
+		BF1BEE852719F37100ACD9C0 /* SeriesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BEE842719F37100ACD9C0 /* SeriesViewControllerTests.swift */; };
+		BF1BEE872719F6D800ACD9C0 /* SeriesInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BEE862719F6D800ACD9C0 /* SeriesInteractorTests.swift */; };
 		BF96E4632718A3F90084654A /* SeriesServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF96E4622718A3F90084654A /* SeriesServiceTests.swift */; };
 		BF96E4672718B7E30084654A /* SeriesUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF96E4662718B7E30084654A /* SeriesUseCaseTests.swift */; };
 		BF96E4692718BC540084654A /* SeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF96E4682718BC540084654A /* SeriesViewController.swift */; };
@@ -91,6 +96,11 @@
 		BF1BEE782719D0DA00ACD9C0 /* EmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableViewCell.swift; sourceTree = "<group>"; };
 		BF1BEE7A2719D16800ACD9C0 /* ErrorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTableViewCell.swift; sourceTree = "<group>"; };
 		BF1BEE7C2719D1D100ACD9C0 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		BF1BEE7E2719EDC100ACD9C0 /* SeriesConfiguratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesConfiguratorTests.swift; sourceTree = "<group>"; };
+		BF1BEE802719EE6E00ACD9C0 /* SeriesPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesPresenterTests.swift; sourceTree = "<group>"; };
+		BF1BEE822719F02D00ACD9C0 /* DispatchQueueExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueExtensions.swift; sourceTree = "<group>"; };
+		BF1BEE842719F37100ACD9C0 /* SeriesViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesViewControllerTests.swift; sourceTree = "<group>"; };
+		BF1BEE862719F6D800ACD9C0 /* SeriesInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesInteractorTests.swift; sourceTree = "<group>"; };
 		BF96E4622718A3F90084654A /* SeriesServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesServiceTests.swift; sourceTree = "<group>"; };
 		BF96E4662718B7E30084654A /* SeriesUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesUseCaseTests.swift; sourceTree = "<group>"; };
 		BF96E4682718BC540084654A /* SeriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +201,10 @@
 			children = (
 				BF96E47D2718CD270084654A /* Views */,
 				BF96E4652718B7CC0084654A /* Domain */,
+				BF1BEE7E2719EDC100ACD9C0 /* SeriesConfiguratorTests.swift */,
+				BF1BEE802719EE6E00ACD9C0 /* SeriesPresenterTests.swift */,
+				BF1BEE842719F37100ACD9C0 /* SeriesViewControllerTests.swift */,
+				BF1BEE862719F6D800ACD9C0 /* SeriesInteractorTests.swift */,
 			);
 			path = Series;
 			sourceTree = "<group>";
@@ -221,6 +235,7 @@
 				BF96E47B2718CAA20084654A /* NSObjectExtensions.swift */,
 				BFA27C502718D35900C01A7F /* StringExtensions.swift */,
 				BF1BEE7C2719D1D100ACD9C0 /* UIImageExtensions.swift */,
+				BF1BEE822719F02D00ACD9C0 /* DispatchQueueExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -705,6 +720,7 @@
 				BF96E4742718BF860084654A /* Metrics.swift in Sources */,
 				BFEDFA2227175ECB00C11995 /* NetworkResponse.swift in Sources */,
 				BFEDFA412717607500C11995 /* DefaultResponseDecoder.swift in Sources */,
+				BF1BEE832719F02D00ACD9C0 /* DispatchQueueExtensions.swift in Sources */,
 				BF1BEE792719D0DA00ACD9C0 /* EmptyTableViewCell.swift in Sources */,
 				BFEDFA682717996C00C11995 /* SearchResponseEntity.swift in Sources */,
 				BFEDFA3F2717606700C11995 /* NetworkResponseDecoder.swift in Sources */,
@@ -736,14 +752,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF96E4632718A3F90084654A /* SeriesServiceTests.swift in Sources */,
+				BF1BEE812719EE6E00ACD9C0 /* SeriesPresenterTests.swift in Sources */,
 				BFEDFA52271773C100C11995 /* DefaultNetworkDispatcherTests.swift in Sources */,
 				BF96E47F2718CD330084654A /* SeriesContentViewTests.swift in Sources */,
 				BF96E4672718B7E30084654A /* SeriesUseCaseTests.swift in Sources */,
 				BFEDFA4B2717631600C11995 /* DefaultURLProviderTests.swift in Sources */,
+				BF1BEE7F2719EDC100ACD9C0 /* SeriesConfiguratorTests.swift in Sources */,
 				BFEDFA4F2717635100C11995 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				BFEDFA592717753800C11995 /* DefaultResponseDecoderTests.swift in Sources */,
 				BFEDFA5B2717762700C11995 /* DefaultRequestBuilderTests.swift in Sources */,
 				BFEDFA57271774D200C11995 /* URLSessionHTTPClientTests.swift in Sources */,
+				BF1BEE872719F6D800ACD9C0 /* SeriesInteractorTests.swift in Sources */,
+				BF1BEE852719F37100ACD9C0 /* SeriesViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

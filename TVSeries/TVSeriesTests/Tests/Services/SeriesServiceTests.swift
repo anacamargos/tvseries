@@ -253,6 +253,6 @@ extension EpisodesResponseEntity {
 
 extension SearchResponseEntity {
     static var mock: SearchResponseEntity {
-        .init(score: 1, serie: .mock)
+        .init(score: 1, show: .mock)
     }
 }
