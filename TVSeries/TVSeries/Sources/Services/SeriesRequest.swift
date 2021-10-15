@@ -34,6 +34,8 @@ enum SeriesRequest: NetworkRequest {
         switch self {
         case let .series(page):
             return .raw(["page": "\(page)"])
+        case let .search(serieName):
+            return .raw(["q": serieName])
         default:
             return nil
         }

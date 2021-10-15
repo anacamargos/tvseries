@@ -86,13 +86,17 @@ extension SeriesViewController: SeriesDisplayLogic {
 }
 
 extension SeriesViewController: UISearchBarDelegate {
-
-    func updateSearchResults(for searchController: UISearchController) {
-        
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            interactor.onViewDidLoad()
+        } else {
+            interactor.search(for: searchText)
+        }
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        
+        interactor.onViewDidLoad()
     }
 }
 

@@ -68,6 +68,23 @@ final class SeriesInteractor {
             }
         }
     }
+    
+    private func searchSeries(with serieName: String) {
+        presenter.presentSeries(.loading)
+        seriesUseCase.execute(serieName: serieName) { [weak self] result in
+            switch result {
+            case let .success(response):
+                self?.series = response
+                if response.data.isEmpty {
+                    self?.presenter.presentSeries(.empty)
+                } else {
+                    self?.presenter.presentSeries(.content(response))
+                }
+            case .failure:
+                self?.presenter.presentSeries(.error)
+            }
+        }
+    }
 }
 
 // MARK: - Business Logic
@@ -88,6 +105,6 @@ extension SeriesInteractor: SeriesBusinessLogic {
     }
 
     func search(for seriesName: String) {
-        
+        searchSeries(with: seriesName)
     }
 }

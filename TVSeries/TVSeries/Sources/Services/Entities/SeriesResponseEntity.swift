@@ -12,8 +12,8 @@ struct SeriesResponseEntity: Codable {
     let name: String
     let genres: [String]
     let schedule: Schedule
-    let image: CommonEntity.Image
-    let summary: String
+    let image: CommonEntity.Image?
+    let summary: String?
     
     struct Schedule: Codable {
         let time: String

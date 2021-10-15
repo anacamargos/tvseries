@@ -56,7 +56,7 @@ final class SeriesUseCase: SeriesUseCaseProvider {
         then: (Result<SeriesUseCaseModel, SeriesUseCaseError>) -> Void
     ) {
         let domainItems = input.map {
-            SeriesUseCaseModel.Serie(id: $0.id, name: $0.name, genres: $0.genres, schedule: .init(time: $0.schedule.time, days: $0.schedule.days), image: CommonUseCaseModel.getImage($0.image), summary: $0.summary)
+            SeriesUseCaseModel.Serie(id: $0.id, name: $0.name, genres: $0.genres, schedule: .init(time: $0.schedule.time, days: $0.schedule.days), image: CommonUseCaseModel.getImage($0.image), summary: $0.summary ?? "")
         }
         let domainData = SeriesUseCaseModel(data: domainItems)
         then(.success(domainData))
@@ -67,7 +67,7 @@ final class SeriesUseCase: SeriesUseCaseProvider {
         then: (Result<SeriesUseCaseModel, SeriesUseCaseError>) -> Void
     ) {
         let domainItems = input.map {
-            SeriesUseCaseModel.Serie(id: $0.serie.id, name: $0.serie.name, genres: $0.serie.genres, schedule: .init(time: $0.serie.schedule.time, days: $0.serie.schedule.days), image: CommonUseCaseModel.getImage($0.serie.image), summary: $0.serie.summary)
+            SeriesUseCaseModel.Serie(id: $0.show.id, name: $0.show.name, genres: $0.show.genres, schedule: .init(time: $0.show.schedule.time, days: $0.show.schedule.days), image: CommonUseCaseModel.getImage($0.show.image), summary: $0.show.summary ?? "")
         }
         let domainData = SeriesUseCaseModel(data: domainItems)
         then(.success(domainData))

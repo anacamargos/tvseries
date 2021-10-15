@@ -8,6 +8,6 @@
 import Foundation
 
 struct SearchResponseEntity: Codable {
-    let score: Double
-    let serie: SeriesResponseEntity
+    let score: Double?
+    let show: SeriesResponseEntity
 }
