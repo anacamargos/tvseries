@@ -17,10 +17,28 @@ final class SeriesContentViewTests: XCTestCase {
         assertSnapshot(matching: view, as: .image)
     }
     
+    func test_seriesContentView_errorState() {
+        let view = makeView()
+        view.setupSeriesViewState(.error)
+        assertSnapshot(matching: view, as: .image)
+    }
+    
+    func test_seriesContentView_loadingState() {
+        let view = makeView()
+        view.setupSeriesViewState(.loading)
+        assertSnapshot(matching: view, as: .image)
+    }
+    
+    func test_seriesContentView_emptyState() {
+        let view = makeView()
+        view.setupSeriesViewState(.empty)
+        assertSnapshot(matching: view, as: .image)
+    }
+    
     // MARK: - Private Methods
     
     private func makeView() -> SeriesContentView {
-        let view = SeriesContentView()
+        let view = SeriesContentView(onWillDisplayNewCells: { _ in })
         view.frame = .init(origin: .zero, size: CGSize(width: 350, height: 600))
         return view
     }

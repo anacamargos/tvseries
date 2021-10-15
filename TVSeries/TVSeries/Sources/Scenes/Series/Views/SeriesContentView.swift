@@ -32,6 +32,9 @@ final class SeriesContentView: CodedView {
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.register(SeriesCell.self, forCellReuseIdentifier: SeriesCell.className)
+        tableView.register(CustomLoadingTableViewCell.self, forCellReuseIdentifier: CustomLoadingTableViewCell.className)
+        tableView.register(EmptyTableViewCell.self, forCellReuseIdentifier: EmptyTableViewCell.className)
+        tableView.register(ErrorTableViewCell.self, forCellReuseIdentifier: ErrorTableViewCell.className)
         return tableView
     }()
     
@@ -76,6 +79,23 @@ final class SeriesContentView: CodedView {
         cell.setupViewData(viewData)
         return cell
     }
+    
+    private func getLoadingCell(for indexPath: IndexPath) -> UITableViewCell {
+        let cell: CustomLoadingTableViewCell = tableView.reusableCell(for: CustomLoadingTableViewCell.className, for: indexPath)
+        cell.startLoading()
+        return cell
+    }
+
+    private func getEmptyCell(for indexPath: IndexPath) -> UITableViewCell {
+        let cell: EmptyTableViewCell = tableView.reusableCell(for: EmptyTableViewCell.className, for: indexPath)
+        cell.setupLabelText("Vazio...")
+        return cell
+    }
+
+    private func getErrorCell(for indexPath: IndexPath) -> UITableViewCell {
+        let cell: ErrorTableViewCell = tableView.reusableCell(for: ErrorTableViewCell.className, for: indexPath)
+        return cell
+    }
 }
 
 // MARK: - SeriesContentViewProtocol
@@ -108,11 +128,11 @@ extension SeriesContentView: UITableViewDelegate, UITableViewDataSource {
             let currentSerie = viewData.series[indexPath.row]
             return getSerieCell(for: indexPath, with: currentSerie)
         case .loading:
-            return .init()
+            return getLoadingCell(for: indexPath)
         case .empty:
-            return .init()
+            return getEmptyCell(for: indexPath)
         case .error:
-            return .init()
+            return getErrorCell(for: indexPath)
         }
     }
     

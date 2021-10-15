@@ -47,7 +47,9 @@ final class SeriesViewController: UIViewController {
     }
 
     override func loadView() {
-        view = SeriesContentView(onWillDisplayNewCells: { [weak self] row in self?.onWillDisplayNewCells(lasDisplayedRow: row) } )
+        view = SeriesContentView(
+            onWillDisplayNewCells: { [weak self] row in self?.onWillDisplayNewCells(lasDisplayedRow: row) }
+        )
         contentView = view as? SeriesContentViewProtocol
     }
     
