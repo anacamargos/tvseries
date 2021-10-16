@@ -76,7 +76,6 @@ final class SeriesPresenterTests: XCTestCase {
         return sut
     }
 
-
 }
 
 final class SeriesDisplayLogicDummy: SeriesDisplayLogic {

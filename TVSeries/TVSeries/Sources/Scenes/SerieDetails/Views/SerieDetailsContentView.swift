@@ -63,6 +63,12 @@ final class SerieDetailsContentView: CodedView {
 
 extension SerieDetailsContentView: SerieDetailsContentViewProtocol {
     
+    func setupSerieDetailsViewData(_ viewData: SerieDetails.Serie) {
+        let headerView = SerieDetailsHeaderView()
+        headerView.setupViewData(viewData)
+        tableView.tableHeaderView = headerView
+        tableView.layoutTableHeaderView(animated: true)
+    }
 }
 
 // MARK: - UITableViewDelegate and UITableViewDataSource

@@ -9,6 +9,13 @@ import UIKit
 
 final class SerieDetailsHeaderView: CodedView {
     
+    // MARK: - View Metrics
+    
+    private enum ViewMetrics {
+        static let imageWidth: CGFloat = 150
+        static let imageHeight: CGFloat = 220
+    }
+    
     // MARK: - Layout Components
 
     private let serieImageView: UIImageView = {
@@ -68,18 +75,19 @@ final class SerieDetailsHeaderView: CodedView {
         serieImageView.anchor(
             top: topAnchor,
             leading: leadingAnchor,
-            leadingConstant: 10,
-            widthConstant: 150,
-            heightConstant: 220)
+            leadingConstant: Metrics.Spacing.xSmall,
+            widthConstant: ViewMetrics.imageWidth,
+            heightConstant: ViewMetrics.imageHeight
+        )
     }
 
     private func constrainSerieNameLabel() {
         serieNameLabel.anchor(
             top: serieImageView.topAnchor,
             leading: serieImageView.trailingAnchor,
-            trailing: rightAnchor,
-            leadingConstant: 12,
-            trailingConstant: 12
+            trailing: trailingAnchor,
+            leadingConstant: Metrics.Spacing.small,
+            trailingConstant: Metrics.Spacing.small
         )
         serieNameLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
     }
@@ -89,11 +97,11 @@ final class SerieDetailsHeaderView: CodedView {
             top: serieNameLabel.bottomAnchor,
             leading: serieImageView.trailingAnchor,
             bottom: bottomAnchor,
-            trailing: rightAnchor,
-            topConstant: 2,
-            leadingConstant: 12,
-            bottomConstant: 10,
-            trailingConstant: 12
+            trailing: trailingAnchor,
+            topConstant: Metrics.Spacing.tiny,
+            leadingConstant: Metrics.Spacing.small,
+            bottomConstant: Metrics.Spacing.xSmall,
+            trailingConstant: Metrics.Spacing.small
         )
     }
 
@@ -102,17 +110,34 @@ final class SerieDetailsHeaderView: CodedView {
             top: serieImageView.bottomAnchor,
             leading: serieImageView.leadingAnchor,
             trailing: serieImageView.trailingAnchor,
-            topConstant: 10
+            topConstant: Metrics.Spacing.xSmall
         )
     }
 
     private func constrainGenresLabel() {
-        genresLabel.anchor(top: scheduleLabel.bottomAnchor,
-                           left: serieImageView.leftAnchor,
-                           bottom: bottomAnchor,
-                           right: serieImageView.rightAnchor,
-                           topConstant: 4,
-                           bottomConstant: 10)
+        genresLabel.anchor(
+            top: scheduleLabel.bottomAnchor,
+            leading: serieImageView.leadingAnchor,
+            bottom: bottomAnchor,
+            trailing: serieImageView.trailingAnchor,
+            topConstant: Metrics.Spacing.tiny,
+            bottomConstant: Metrics.Spacing.xSmall
+        )
+    }
+    
+    // MARK: - Public Methods
+    
+    func setupViewData(_ viewData: SerieDetails.Serie) {
+        serieNameLabel.text = viewData.name
+        serieSummaryLabel.text = viewData.summary.htmlToString
+        genresLabel.text = viewData.genres
+        scheduleLabel.text = viewData.genres
+        if let imageURL = viewData.imageURL {
+            serieImageView.kf.indicatorType = .activity
+            serieImageView.kf.setImage(with: imageURL)
+        } else {
+            serieImageView.image = .init()
+        }
     }
 
 }
