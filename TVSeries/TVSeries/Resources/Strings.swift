@@ -18,6 +18,10 @@ internal enum L10n {
     internal static var emptyMessage: String {
       L10n.tr("Localizable", "series.empty_message")
     }
+    /// %d episodes
+    internal static func episodes(_ p1: Int) -> String {
+      return L10n.tr("Localizable", "series.episodes", p1)
+    }
     /// Could not load the series. Try again
     internal static var errorMessage: String {
       L10n.tr("Localizable", "series.error_message")
@@ -25,6 +29,10 @@ internal enum L10n {
     /// Search
     internal static var search: String {
       L10n.tr("Localizable", "series.search")
+    }
+    /// Season %d
+    internal static func season(_ p1: Int) -> String {
+      return L10n.tr("Localizable", "series.season", p1)
     }
     /// Series
     internal static var title: String {

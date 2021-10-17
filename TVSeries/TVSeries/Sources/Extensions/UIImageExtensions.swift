@@ -12,9 +12,13 @@ extension UIImage {
 
     enum Resource: String {
         case reloadArrow = "reload-arrow"
+        case iconDown = "icon-down"
+        case iconUp = "icon-up"
     }
 
     class var reloadArrow: UIImage { UIImage(.reloadArrow)! }
+    class var iconDown: UIImage { UIImage(.iconDown)! }
+    class var iconUp: UIImage { UIImage(.iconUp)! }
 
     convenience init?(_ resource: Resource) {
         self.init(
