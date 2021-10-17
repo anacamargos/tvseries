@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		33FD93885F6B51C224444EF3 /* Pods_TVSeriesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7AF3A74555F802B49B1C53D /* Pods_TVSeriesTests.framework */; };
+		BF07C231271C6CFE00138641 /* SerieDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF07C230271C6CFE00138641 /* SerieDetailsPresenter.swift */; };
+		BF07C233271C6DAF00138641 /* SerieDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF07C232271C6DAF00138641 /* SerieDetailsInteractor.swift */; };
 		BF1BEE712719C7AE00ACD9C0 /* SeriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BEE702719C7AE00ACD9C0 /* SeriesPresenter.swift */; };
 		BF1BEE732719C91C00ACD9C0 /* SeriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BEE722719C91C00ACD9C0 /* SeriesInteractor.swift */; };
 		BF1BEE752719CBA100ACD9C0 /* SeriesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BEE742719CBA100ACD9C0 /* SeriesConfigurator.swift */; };
@@ -101,6 +103,8 @@
 		601B5B7D81FFFC59C6615095 /* Pods-TVSeriesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVSeriesTests.debug.xcconfig"; path = "Target Support Files/Pods-TVSeriesTests/Pods-TVSeriesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		696FA94B9DEC38E83C60FD3F /* Pods_TVSeries.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TVSeries.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF08D8A45ED41BBACCFE4E93 /* Pods-TVSeries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVSeries.debug.xcconfig"; path = "Target Support Files/Pods-TVSeries/Pods-TVSeries.debug.xcconfig"; sourceTree = "<group>"; };
+		BF07C230271C6CFE00138641 /* SerieDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieDetailsPresenter.swift; sourceTree = "<group>"; };
+		BF07C232271C6DAF00138641 /* SerieDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieDetailsInteractor.swift; sourceTree = "<group>"; };
 		BF1BEE702719C7AE00ACD9C0 /* SeriesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesPresenter.swift; sourceTree = "<group>"; };
 		BF1BEE722719C91C00ACD9C0 /* SeriesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesInteractor.swift; sourceTree = "<group>"; };
 		BF1BEE742719CBA100ACD9C0 /* SeriesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesConfigurator.swift; sourceTree = "<group>"; };
@@ -229,6 +233,8 @@
 				BF1BEE91271A0D8900ACD9C0 /* SerieDetailsViewController.swift */,
 				BFBD97C0271AF64500232E60 /* SerieDetailsModels.swift */,
 				BFBD97CE271C698500232E60 /* SerieDetailsConfigurator.swift */,
+				BF07C230271C6CFE00138641 /* SerieDetailsPresenter.swift */,
+				BF07C232271C6DAF00138641 /* SerieDetailsInteractor.swift */,
 			);
 			path = SerieDetails;
 			sourceTree = "<group>";
@@ -795,6 +801,7 @@
 				BFEDFA46271760AC00C11995 /* DefaultNetworkDispatcher.swift in Sources */,
 				BFEDFA3827175FE500C11995 /* NetworkRequestBuilder.swift in Sources */,
 				BFEDFA2D27175F6400C11995 /* URLProvider.swift in Sources */,
+				BF07C231271C6CFE00138641 /* SerieDetailsPresenter.swift in Sources */,
 				BF96E46C2718BC9D0084654A /* SeriesContentView.swift in Sources */,
 				BFEDFA3127175F9000C11995 /* HTTPBody.swift in Sources */,
 				BF96E4742718BF860084654A /* Metrics.swift in Sources */,
@@ -813,6 +820,7 @@
 				BFEDFA2427175EEE00C11995 /* NetworkError.swift in Sources */,
 				BFEDFA1B27175E3B00C11995 /* URLSessionHTTPClient.swift in Sources */,
 				BF1BEE712719C7AE00ACD9C0 /* SeriesPresenter.swift in Sources */,
+				BF07C233271C6DAF00138641 /* SerieDetailsInteractor.swift in Sources */,
 				BF1BEE8F271A08BD00ACD9C0 /* Strings.swift in Sources */,
 				BFEDFA3A27175FF500C11995 /* DefaultRequestBuilder.swift in Sources */,
 				BF96E4712718BCD80084654A /* UIView+Autolayout.swift in Sources */,

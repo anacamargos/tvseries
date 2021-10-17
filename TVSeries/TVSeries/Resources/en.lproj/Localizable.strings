@@ -12,3 +12,6 @@
 "series.error_message" = "Could not load data. Try again";
 "series.season" = "Season %d";
 "series.episodes" = "%d episodes";
+"series.schedule" = "Schedule: ";
+"series.at" = " at %@";
+"series.genres" = "Genres: ";

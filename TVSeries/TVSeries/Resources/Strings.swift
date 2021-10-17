@@ -14,6 +14,10 @@ import Foundation
 internal enum L10n {
 
   internal enum Series {
+    ///  at %@
+    internal static func at(_ p1: String) -> String {
+      return L10n.tr("Localizable", "series.at", p1)
+    }
     /// We didn't find any series
     internal static var emptyMessage: String {
       L10n.tr("Localizable", "series.empty_message")
@@ -25,6 +29,14 @@ internal enum L10n {
     /// Could not load data. Try again
     internal static var errorMessage: String {
       L10n.tr("Localizable", "series.error_message")
+    }
+    /// Genres: 
+    internal static var genres: String {
+      L10n.tr("Localizable", "series.genres")
+    }
+    /// Schedule: 
+    internal static var schedule: String {
+      L10n.tr("Localizable", "series.schedule")
     }
     /// Search
     internal static var search: String {

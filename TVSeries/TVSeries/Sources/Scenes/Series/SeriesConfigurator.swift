@@ -18,7 +18,7 @@ final class SeriesConfigurator {
         let service = SeriesService(networkDispatcher: networkDispatcher)
         let useCase = SeriesUseCase(service: service)
         
-        let configurator = SerieDetailsConfigurator()
+        let configurator = SerieDetailsConfigurator(networkDispatcher: networkDispatcher)
         let presenter = SeriesPresenter()
         let interactor = SeriesInteractor(presenter: presenter, seriesUseCase: useCase)
         let router = SeriesRouter(serieDetailsConfigurator: configurator, dataStore: interactor)

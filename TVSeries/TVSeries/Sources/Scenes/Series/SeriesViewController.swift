@@ -78,8 +78,8 @@ final class SeriesViewController: UIViewController {
     }
     
     private func handleSerieSelection(_ selectedId: Int) {
-        router.routeToSerieDetailsScene()
         interactor.handleSerieSelection(selectedId)
+        router.routeToSerieDetailsScene()
     }
 }
 

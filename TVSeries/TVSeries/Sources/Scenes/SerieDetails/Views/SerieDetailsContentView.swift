@@ -7,7 +7,10 @@
 
 import UIKit
 
-protocol SerieDetailsContentViewProtocol: AnyObject {}
+protocol SerieDetailsContentViewProtocol: AnyObject {
+    func setupSerieDetailsViewData(_ viewData: SerieDetails.Serie)
+    func setupEpisodesViewState(_ viewState: SerieDetails.ViewState)
+}
 
 final class SerieDetailsContentView: CodedView {
     

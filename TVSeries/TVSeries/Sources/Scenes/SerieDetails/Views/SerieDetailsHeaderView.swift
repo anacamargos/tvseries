@@ -131,7 +131,7 @@ final class SerieDetailsHeaderView: CodedView {
         serieNameLabel.text = viewData.name
         serieSummaryLabel.text = viewData.summary.htmlToString
         genresLabel.text = viewData.genres
-        scheduleLabel.text = viewData.genres
+        scheduleLabel.text = viewData.schedule
         if let imageURL = viewData.imageURL {
             serieImageView.kf.indicatorType = .activity
             serieImageView.kf.setImage(with: imageURL)

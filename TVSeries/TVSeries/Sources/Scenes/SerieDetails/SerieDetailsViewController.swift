@@ -8,10 +8,15 @@
 import UIKit
 
 protocol SerieDetailsDisplayLogic: AnyObject {
-    
+    func displaySerieDetailsViewData(_ viewData: SerieDetails.Serie)
+    func displayEpisodesViewState(_ viewState: SerieDetails.ViewState)
 }
 
 final class SerieDetailsViewController: UIViewController {
+    
+    // MARK: - Dependencies
+    
+    private let interactor: SerieDetailsBusinessLogic
     
     // MARK: - View Components
 
@@ -19,7 +24,10 @@ final class SerieDetailsViewController: UIViewController {
     
     // MARK: - Initializers
 
-    init() {
+    init(
+        interactor: SerieDetailsBusinessLogic
+    ) {
+        self.interactor = interactor
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -32,6 +40,7 @@ final class SerieDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        interactor.onViewDidLoad()
         configureNavigationBar()
     }
 
@@ -44,10 +53,19 @@ final class SerieDetailsViewController: UIViewController {
 
     private func configureNavigationBar() {
         navigationController?.setNavigationBarHidden(false, animated: true)
-        title = L10n.Series.title
     }
 }
 
 // MARK: - SerieDetailsDisplayLogic
 
-extension SerieDetailsViewController: SerieDetailsDisplayLogic {}
+extension SerieDetailsViewController: SerieDetailsDisplayLogic {
+    
+    func displaySerieDetailsViewData(_ viewData: SerieDetails.Serie) {
+        title = viewData.name
+        contentView?.setupSerieDetailsViewData(viewData)
+    }
+    
+    func displayEpisodesViewState(_ viewState: SerieDetails.ViewState) {
+        contentView?.setupEpisodesViewState(viewState)
+    }
+}

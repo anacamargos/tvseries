@@ -36,7 +36,9 @@ final class SeriesRouter: SeriesRoutingLogic, SeriesDataPassing {
     // MARK: - Public Methods
     
     func routeToSerieDetailsScene() {
-        let destinationViewController = serieDetailsConfigurator.resolveViewController()
+        guard let selectedSerie = dataStore?.selectedSerie else { return }
+        let parameters = SerieDetailsSceneParameters(selectedSerie: selectedSerie)
+        let destinationViewController = serieDetailsConfigurator.resolveViewController(using: parameters)
         viewController?.navigationController?.pushViewController(destinationViewController, animated: true)
     }
 }
