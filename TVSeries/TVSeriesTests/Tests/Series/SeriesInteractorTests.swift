@@ -132,6 +132,24 @@ final class SeriesInteractorTests: XCTestCase {
         // Then
         XCTAssertEqual(String(describing: presenterSpy.presentSeriesPassedResponses), String(describing: [.loading, expectedResponse]))
     }
+    
+    func test_handleSerieSelection_shouldCallCorrectMethodInPresenterWithCorrectParameters() {
+        // Given
+        let useCaseStub = SeriesUseCaseStub()
+        useCaseStub.executeResultToBeReturned = .success(.mock)
+        let sut = makeSUT(seriesUseCase: useCaseStub)
+
+        // When
+        sut.onViewDidLoad()
+        sut.handleSerieSelection(1)
+
+        // Then
+        guard let selectedSerie = sut.selectedSerie else {
+            XCTFail("Could not find selectedSerie")
+            return
+        }
+        XCTAssertEqual(String(describing: selectedSerie), String(describing: SeriesUseCaseModel.Serie.mock))
+    }
 
     // MARK: - Test Helpers
 

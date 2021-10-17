@@ -115,7 +115,7 @@ extension SeriesInteractor: SeriesBusinessLogic {
     }
     
     func handleSerieSelection(_ selectedId: Int) {
-        let selectedSerie = series.data.first(where: { $0.id == selectedId })
+        let selectedSerie = series.data.first { $0.id == selectedId }
         self.selectedSerie = selectedSerie
     }
 }

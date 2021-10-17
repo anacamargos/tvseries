@@ -10,6 +10,8 @@
 		33FD93885F6B51C224444EF3 /* Pods_TVSeriesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7AF3A74555F802B49B1C53D /* Pods_TVSeriesTests.framework */; };
 		BF07C231271C6CFE00138641 /* SerieDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF07C230271C6CFE00138641 /* SerieDetailsPresenter.swift */; };
 		BF07C233271C6DAF00138641 /* SerieDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF07C232271C6DAF00138641 /* SerieDetailsInteractor.swift */; };
+		BF07C235271C74C700138641 /* SerieDetailsConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF07C234271C74C700138641 /* SerieDetailsConfiguratorTests.swift */; };
+		BF07C237271C768D00138641 /* SeriesRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF07C236271C768D00138641 /* SeriesRouterTests.swift */; };
 		BF1BEE712719C7AE00ACD9C0 /* SeriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BEE702719C7AE00ACD9C0 /* SeriesPresenter.swift */; };
 		BF1BEE732719C91C00ACD9C0 /* SeriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BEE722719C91C00ACD9C0 /* SeriesInteractor.swift */; };
 		BF1BEE752719CBA100ACD9C0 /* SeriesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BEE742719CBA100ACD9C0 /* SeriesConfigurator.swift */; };
@@ -105,6 +107,8 @@
 		AF08D8A45ED41BBACCFE4E93 /* Pods-TVSeries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVSeries.debug.xcconfig"; path = "Target Support Files/Pods-TVSeries/Pods-TVSeries.debug.xcconfig"; sourceTree = "<group>"; };
 		BF07C230271C6CFE00138641 /* SerieDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieDetailsPresenter.swift; sourceTree = "<group>"; };
 		BF07C232271C6DAF00138641 /* SerieDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieDetailsInteractor.swift; sourceTree = "<group>"; };
+		BF07C234271C74C700138641 /* SerieDetailsConfiguratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieDetailsConfiguratorTests.swift; sourceTree = "<group>"; };
+		BF07C236271C768D00138641 /* SeriesRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesRouterTests.swift; sourceTree = "<group>"; };
 		BF1BEE702719C7AE00ACD9C0 /* SeriesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesPresenter.swift; sourceTree = "<group>"; };
 		BF1BEE722719C91C00ACD9C0 /* SeriesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesInteractor.swift; sourceTree = "<group>"; };
 		BF1BEE742719CBA100ACD9C0 /* SeriesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesConfigurator.swift; sourceTree = "<group>"; };
@@ -267,6 +271,7 @@
 				BF1BEE802719EE6E00ACD9C0 /* SeriesPresenterTests.swift */,
 				BF1BEE842719F37100ACD9C0 /* SeriesViewControllerTests.swift */,
 				BF1BEE862719F6D800ACD9C0 /* SeriesInteractorTests.swift */,
+				BF07C236271C768D00138641 /* SeriesRouterTests.swift */,
 			);
 			path = Series;
 			sourceTree = "<group>";
@@ -325,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				BFBD97C5271AF80600232E60 /* Views */,
+				BF07C234271C74C700138641 /* SerieDetailsConfiguratorTests.swift */,
 			);
 			path = SerieDetails;
 			sourceTree = "<group>";
@@ -847,8 +853,10 @@
 			files = (
 				BFBD97C4271AF80100232E60 /* SerieDetailsContentViewTests.swift in Sources */,
 				BF96E4632718A3F90084654A /* SeriesServiceTests.swift in Sources */,
+				BF07C235271C74C700138641 /* SerieDetailsConfiguratorTests.swift in Sources */,
 				BF1BEE812719EE6E00ACD9C0 /* SeriesPresenterTests.swift in Sources */,
 				BFEDFA52271773C100C11995 /* DefaultNetworkDispatcherTests.swift in Sources */,
+				BF07C237271C768D00138641 /* SeriesRouterTests.swift in Sources */,
 				BF96E47F2718CD330084654A /* SeriesContentViewTests.swift in Sources */,
 				BF96E4672718B7E30084654A /* SeriesUseCaseTests.swift in Sources */,
 				BFEDFA4B2717631600C11995 /* DefaultURLProviderTests.swift in Sources */,
