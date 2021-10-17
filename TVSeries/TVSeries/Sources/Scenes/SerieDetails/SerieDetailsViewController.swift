@@ -17,6 +17,7 @@ final class SerieDetailsViewController: UIViewController {
     // MARK: - Dependencies
     
     private let interactor: SerieDetailsBusinessLogic
+    private let mainDispatchQueue: DispatchQueueType
     
     // MARK: - View Components
 
@@ -25,9 +26,11 @@ final class SerieDetailsViewController: UIViewController {
     // MARK: - Initializers
 
     init(
-        interactor: SerieDetailsBusinessLogic
+        interactor: SerieDetailsBusinessLogic,
+        mainDispatchQueue: DispatchQueueType = DispatchQueue.main
     ) {
         self.interactor = interactor
+        self.mainDispatchQueue = mainDispatchQueue
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -66,6 +69,8 @@ extension SerieDetailsViewController: SerieDetailsDisplayLogic {
     }
     
     func displayEpisodesViewState(_ viewState: SerieDetails.ViewState) {
-        contentView?.setupEpisodesViewState(viewState)
+        mainDispatchQueue.async {
+            self.contentView?.setupEpisodesViewState(viewState)
+        }
     }
 }

@@ -69,7 +69,7 @@ final class SerieDetailsViewControllerTests: XCTestCase {
         file: StaticString = #file,
         line: UInt = #line
     ) -> SerieDetailsViewController {
-        let sut = SerieDetailsViewController(interactor: interactor)
+        let sut = SerieDetailsViewController(interactor: interactor, mainDispatchQueue: DispatchQueueTypeMock())
         trackForMemoryLeaks(sut, file: file, line: line)
         return sut
     }

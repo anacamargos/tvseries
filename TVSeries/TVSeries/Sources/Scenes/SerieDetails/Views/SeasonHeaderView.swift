@@ -59,7 +59,7 @@ final class SeasonHeaderView: CodedView {
     ) {
         self.onTappedExapandViewClosure = onTappedExapandViewClosure
         super.init(frame: .zero)
-        backgroundColor = .clear
+        backgroundColor = .white
     }
 
     @available(*, unavailable)

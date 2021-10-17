@@ -28,8 +28,10 @@ final class SerieDetailsConfigurator {
     // MARK: - Public Methods
     
     func resolveViewController(using parameters: SerieDetailsSceneParameters) -> UIViewController {
+        let service = SeriesService(networkDispatcher: networkDispatcher)
+        let episodesUseCase = EpisodesUseCase(service: service)
         let presenter = SerieDetailsPresenter()
-        let interactor = SerieDetailsInteractor(presenter: presenter, parameters: parameters)
+        let interactor = SerieDetailsInteractor(presenter: presenter, episodesUseCase: episodesUseCase, parameters: parameters)
         let viewController = SerieDetailsViewController(interactor: interactor)
         presenter.viewController = viewController
         return viewController

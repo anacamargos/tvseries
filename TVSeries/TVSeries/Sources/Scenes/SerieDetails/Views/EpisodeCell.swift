@@ -32,6 +32,7 @@ final class EpisodeCell: CodedTableViewCell {
 
     private let episodeImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
 
@@ -104,14 +105,13 @@ final class EpisodeCell: CodedTableViewCell {
 
     private func constrainEpisodeNumberLabel() {
         episodeNumberLabel.anchor(
+            top: contentBackgroundView.topAnchor,
             leading: episodeImageView.trailingAnchor,
             trailing: contentBackgroundView.trailingAnchor,
-            leadingConstant: Metrics.Spacing.small,
+            topConstant: Metrics.Spacing.base,
+            leadingConstant: Metrics.Spacing.large,
             trailingConstant: Metrics.Spacing.xSmall
         )
-        episodeNumberLabel.centerYAnchor.constraint(
-            equalTo: episodeImageView.centerYAnchor
-        ).isActive = true
     }
 
     private func constrainEpisodeNameLabel() {
@@ -120,7 +120,7 @@ final class EpisodeCell: CodedTableViewCell {
             leading: episodeImageView.trailingAnchor,
             trailing: contentBackgroundView.trailingAnchor,
             topConstant: Metrics.Spacing.tiny,
-            leadingConstant: Metrics.Spacing.small,
+            leadingConstant: Metrics.Spacing.large,
             trailingConstant: Metrics.Spacing.xSmall
         )
     }

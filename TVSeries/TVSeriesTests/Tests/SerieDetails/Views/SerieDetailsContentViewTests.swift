@@ -51,12 +51,12 @@ extension SerieDetails.Serie {
 
 extension SerieDetails.Episode.ViewData {
     static var firstEpisodeMock: SerieDetails.Episode.ViewData {
-        .init(name: "The Enemy Within", number: "S03 | E13", imageURL: nil)
+        .init(id: 1, name: "The Enemy Within", number: "S03 | E13", imageURL: nil)
     }
     static var secondEpisodeMock: SerieDetails.Episode.ViewData {
-        .init(name: "return 0", number: "S05 | E13", imageURL: nil)
+        .init(id: 2, name: "return 0", number: "S05 | E13", imageURL: nil)
     }
     static var thirdEpisodeMock: SerieDetails.Episode.ViewData {
-        .init(name: "Truth, Changes, Everything", number: "S03 | E10", imageURL: nil)
+        .init(id: 3, name: "Truth, Changes, Everything", number: "S03 | E10", imageURL: nil)
     }
 }
