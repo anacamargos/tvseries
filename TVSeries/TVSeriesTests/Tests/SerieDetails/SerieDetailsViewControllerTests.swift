@@ -66,10 +66,11 @@ final class SerieDetailsViewControllerTests: XCTestCase {
 
     private func makeSUT(
         interactor: SerieDetailsBusinessLogic = SerieDetailsInteractorDummy(),
+        router: SerieDetailsRoutingLogic = SerieDetailsRouterDummy(),
         file: StaticString = #file,
         line: UInt = #line
     ) -> SerieDetailsViewController {
-        let sut = SerieDetailsViewController(interactor: interactor, mainDispatchQueue: DispatchQueueTypeMock())
+        let sut = SerieDetailsViewController(interactor: interactor, router: router, mainDispatchQueue: DispatchQueueTypeMock())
         trackForMemoryLeaks(sut, file: file, line: line)
         return sut
     }
@@ -78,6 +79,7 @@ final class SerieDetailsViewControllerTests: XCTestCase {
 
 final class SerieDetailsInteractorDummy: SerieDetailsBusinessLogic {
     func onViewDidLoad() {}
+    func handleEpisodeSelecion(_ selectedId: Int) {}
 }
 
 final class SerieDetailsInteractorSpy: SerieDetailsBusinessLogic {
@@ -86,6 +88,12 @@ final class SerieDetailsInteractorSpy: SerieDetailsBusinessLogic {
     
     func onViewDidLoad() {
         onViewDidLoadNumberOfTimesCalled += 1
+    }
+    
+    private(set) var handleEpisodeSelecionNumberOfTimesCalled = 0
+    
+    func handleEpisodeSelecion(_ selectedId: Int) {
+        handleEpisodeSelecionNumberOfTimesCalled += 1
     }
 }
 
@@ -102,4 +110,8 @@ final class SerieDetailsContentViewSpy: SerieDetailsContentViewProtocol {
     func setupEpisodesViewState(_ viewState: SerieDetails.ViewState) {
         setupEpisodesViewStatePassedViewStates.append(viewState)
     }
+}
+
+final class SerieDetailsRouterDummy: SerieDetailsRoutingLogic {
+    func routeToEpisodeDetailsScene() {}
 }

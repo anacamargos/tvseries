@@ -17,6 +17,7 @@ final class SerieDetailsViewController: UIViewController {
     // MARK: - Dependencies
     
     private let interactor: SerieDetailsBusinessLogic
+    private let router: SerieDetailsRoutingLogic
     private let mainDispatchQueue: DispatchQueueType
     
     // MARK: - View Components
@@ -27,9 +28,11 @@ final class SerieDetailsViewController: UIViewController {
 
     init(
         interactor: SerieDetailsBusinessLogic,
+        router: SerieDetailsRoutingLogic,
         mainDispatchQueue: DispatchQueueType = DispatchQueue.main
     ) {
         self.interactor = interactor
+        self.router = router
         self.mainDispatchQueue = mainDispatchQueue
         super.init(nibName: nil, bundle: nil)
     }
@@ -48,7 +51,7 @@ final class SerieDetailsViewController: UIViewController {
     }
 
     override func loadView() {
-        view = SerieDetailsContentView()
+        view = SerieDetailsContentView { [weak self] selectedId in self?.handleEpisodeSelecion(selectedId) }
         contentView = view as? SerieDetailsContentViewProtocol
     }
     
@@ -56,6 +59,11 @@ final class SerieDetailsViewController: UIViewController {
 
     private func configureNavigationBar() {
         navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    private func handleEpisodeSelecion(_ selectedId: Int) {
+        interactor.handleEpisodeSelecion(selectedId)
+        router.routeToEpisodeDetailsScene()
     }
 }
 

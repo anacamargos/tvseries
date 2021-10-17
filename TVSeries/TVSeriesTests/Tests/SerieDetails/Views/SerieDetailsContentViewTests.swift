@@ -36,7 +36,7 @@ final class SerieDetailsContentViewTests: XCTestCase {
     // MARK: - Private Methods
     
     private func makeView() -> SerieDetailsContentView {
-        let view = SerieDetailsContentView()
+        let view = SerieDetailsContentView { _ in }
         view.frame = .init(origin: .zero, size: CGSize(width: 350, height: 600))
         return view
     }

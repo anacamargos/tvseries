@@ -32,7 +32,9 @@ final class SerieDetailsConfigurator {
         let episodesUseCase = EpisodesUseCase(service: service)
         let presenter = SerieDetailsPresenter()
         let interactor = SerieDetailsInteractor(presenter: presenter, episodesUseCase: episodesUseCase, parameters: parameters)
-        let viewController = SerieDetailsViewController(interactor: interactor)
+        let router = SerieDetailsRouter(episodeDetailsConfigurator: .init(), dataStore: interactor)
+        let viewController = SerieDetailsViewController(interactor: interactor, router: router)
+        router.viewController = viewController
         presenter.viewController = viewController
         return viewController
     }

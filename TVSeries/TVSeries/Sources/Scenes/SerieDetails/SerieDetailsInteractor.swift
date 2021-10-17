@@ -9,9 +9,19 @@ import Foundation
 
 protocol SerieDetailsBusinessLogic {
     func onViewDidLoad()
+    func handleEpisodeSelecion(_ selectedId: Int)
 }
 
-final class SerieDetailsInteractor {
+protocol SerieDetailsDataStore {
+    var selectedEpisode: EpisodesUseCaseModel.Episode? { get }
+}
+
+final class SerieDetailsInteractor: SerieDetailsDataStore {
+    
+    // MARK: - Properties
+    
+    private var episodes: EpisodesUseCaseModel = .init(data: [])
+    var selectedEpisode: EpisodesUseCaseModel.Episode?
     
     // MARK: - Dependencies
 
@@ -38,6 +48,7 @@ final class SerieDetailsInteractor {
         episodesUseCase.execute(serieID: serieID) { [weak self] result in
             switch result {
             case let .success(response):
+                self?.episodes = response
                 self?.presenter.presentEpisodesResponse(.content(response))
             case .failure:
                 self?.presenter.presentEpisodesResponse(.error)
@@ -53,5 +64,10 @@ extension SerieDetailsInteractor: SerieDetailsBusinessLogic {
     func onViewDidLoad() {
         presenter.presentSerieDetails(parameters.selectedSerie)
         loadEpisodesData(for: parameters.selectedSerie.id)
+    }
+    
+    func handleEpisodeSelecion(_ selectedId: Int) {
+        let selectedEpisode = episodes.data.first { $0.id == selectedId }
+        self.selectedEpisode = selectedEpisode
     }
 }

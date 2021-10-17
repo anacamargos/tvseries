@@ -14,6 +14,10 @@ protocol SerieDetailsContentViewProtocol: AnyObject {
 
 final class SerieDetailsContentView: CodedView {
     
+    // MARK: - Dependencies
+    
+    private let onTappedEpisodeCellClosure: (Int) -> Void
+    
     // MARK: - Properties
     
     private var episodesViewState: SerieDetails.ViewState = .loading
@@ -37,9 +41,11 @@ final class SerieDetailsContentView: CodedView {
     
     // MARK: - Initializers
 
-    override init(
-        frame: CGRect = .zero
+    init(
+        frame: CGRect = .zero,
+        onTappedEpisodeCellClosure: @escaping (Int) -> Void
     ) {
+        self.onTappedEpisodeCellClosure = onTappedEpisodeCellClosure
         super.init(frame: frame)
         configureView()
     }
@@ -171,5 +177,13 @@ extension SerieDetailsContentView: UITableViewDelegate, UITableViewDataSource {
             return headerView
         }
         return nil
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let season = indexPath.section + 1
+        if case let .content(viewData) = episodesViewState,
+            let currentEpisode = viewData[season]?[indexPath.row] {
+            onTappedEpisodeCellClosure(currentEpisode.id)
+        }
     }
 }
