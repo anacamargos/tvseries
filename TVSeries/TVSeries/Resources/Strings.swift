@@ -22,7 +22,7 @@ internal enum L10n {
     internal static func episodes(_ p1: Int) -> String {
       return L10n.tr("Localizable", "series.episodes", p1)
     }
-    /// Could not load the series. Try again
+    /// Could not load data. Try again
     internal static var errorMessage: String {
       L10n.tr("Localizable", "series.error_message")
     }

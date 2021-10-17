@@ -9,6 +9,6 @@
 "series.title" = "Series";
 "series.search" = "Search";
 "series.empty_message" = "We didn't find any series";
-"series.error_message" = "Could not load the series. Try again";
+"series.error_message" = "Could not load data. Try again";
 "series.season" = "Season %d";
 "series.episodes" = "%d episodes";

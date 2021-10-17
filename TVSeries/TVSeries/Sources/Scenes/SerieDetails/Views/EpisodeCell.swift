@@ -137,4 +137,8 @@ final class EpisodeCell: CodedTableViewCell {
             episodeImageView.image = .init()
         }
     }
+    
+    func cancelDownload() {
+        episodeImageView.kf.cancelDownloadTask()
+    }
 }
