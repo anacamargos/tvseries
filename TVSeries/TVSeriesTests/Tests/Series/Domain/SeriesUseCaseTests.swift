@@ -129,6 +129,6 @@ extension SeriesUseCaseModel {
 
 extension SeriesUseCaseModel.Serie {
     static var mock: SeriesUseCaseModel.Serie {
-        .init(id: 1, name: "Once Upon a Time", genres: ["Drama"], schedule: .init(time: "", days: [.friday]), image: .init(medium: "", original: ""), summary: "Test 1 Test 2 Test 3")
+        .init(id: 1, name: "Once Upon a Time", genres: ["Drama"], schedule: .init(time: "22:00", days: [.friday]), image: .init(medium: "", original: ""), summary: "Test 1 Test 2 Test 3")
     }
 }

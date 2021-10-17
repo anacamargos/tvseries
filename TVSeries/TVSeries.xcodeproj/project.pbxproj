@@ -15,6 +15,8 @@
 		BF07C239271C7A9400138641 /* SerieDetailsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF07C238271C7A9400138641 /* SerieDetailsViewControllerTests.swift */; };
 		BF07C23B271C7C4400138641 /* SerieDetailsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF07C23A271C7C4400138641 /* SerieDetailsPresenterTests.swift */; };
 		BF07C240271C87D600138641 /* EpisodesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF07C23F271C87D600138641 /* EpisodesUseCase.swift */; };
+		BF07C242271C978800138641 /* SerieDetailsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF07C241271C978800138641 /* SerieDetailsInteractorTests.swift */; };
+		BF07C245271C9C9E00138641 /* EpisodesUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF07C244271C9C9E00138641 /* EpisodesUseCaseTests.swift */; };
 		BF1BEE712719C7AE00ACD9C0 /* SeriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BEE702719C7AE00ACD9C0 /* SeriesPresenter.swift */; };
 		BF1BEE732719C91C00ACD9C0 /* SeriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BEE722719C91C00ACD9C0 /* SeriesInteractor.swift */; };
 		BF1BEE752719CBA100ACD9C0 /* SeriesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BEE742719CBA100ACD9C0 /* SeriesConfigurator.swift */; };
@@ -115,6 +117,8 @@
 		BF07C238271C7A9400138641 /* SerieDetailsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieDetailsViewControllerTests.swift; sourceTree = "<group>"; };
 		BF07C23A271C7C4400138641 /* SerieDetailsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieDetailsPresenterTests.swift; sourceTree = "<group>"; };
 		BF07C23F271C87D600138641 /* EpisodesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesUseCase.swift; sourceTree = "<group>"; };
+		BF07C241271C978800138641 /* SerieDetailsInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieDetailsInteractorTests.swift; sourceTree = "<group>"; };
+		BF07C244271C9C9E00138641 /* EpisodesUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesUseCaseTests.swift; sourceTree = "<group>"; };
 		BF1BEE702719C7AE00ACD9C0 /* SeriesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesPresenter.swift; sourceTree = "<group>"; };
 		BF1BEE722719C91C00ACD9C0 /* SeriesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesInteractor.swift; sourceTree = "<group>"; };
 		BF1BEE742719CBA100ACD9C0 /* SeriesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesConfigurator.swift; sourceTree = "<group>"; };
@@ -234,6 +238,14 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
+		BF07C243271C9C9400138641 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				BF07C244271C9C9E00138641 /* EpisodesUseCaseTests.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
 		BF1BEE88271A06F900ACD9C0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,10 +356,12 @@
 		BFBD97C2271AF7EA00232E60 /* SerieDetails */ = {
 			isa = PBXGroup;
 			children = (
+				BF07C243271C9C9400138641 /* Domain */,
 				BFBD97C5271AF80600232E60 /* Views */,
 				BF07C234271C74C700138641 /* SerieDetailsConfiguratorTests.swift */,
 				BF07C238271C7A9400138641 /* SerieDetailsViewControllerTests.swift */,
 				BF07C23A271C7C4400138641 /* SerieDetailsPresenterTests.swift */,
+				BF07C241271C978800138641 /* SerieDetailsInteractorTests.swift */,
 			);
 			path = SerieDetails;
 			sourceTree = "<group>";
@@ -881,6 +895,8 @@
 				BF96E4672718B7E30084654A /* SeriesUseCaseTests.swift in Sources */,
 				BFEDFA4B2717631600C11995 /* DefaultURLProviderTests.swift in Sources */,
 				BF1BEE7F2719EDC100ACD9C0 /* SeriesConfiguratorTests.swift in Sources */,
+				BF07C242271C978800138641 /* SerieDetailsInteractorTests.swift in Sources */,
+				BF07C245271C9C9E00138641 /* EpisodesUseCaseTests.swift in Sources */,
 				BFBD97CB271C51C200232E60 /* EpisodeCellTests.swift in Sources */,
 				BFEDFA4F2717635100C11995 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				BFEDFA592717753800C11995 /* DefaultResponseDecoderTests.swift in Sources */,

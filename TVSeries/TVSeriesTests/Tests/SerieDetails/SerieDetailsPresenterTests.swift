@@ -22,6 +22,44 @@ final class SerieDetailsPresenterTests: XCTestCase {
         // Then
         XCTAssertEqual(String(describing: viewControllerSpy.displaySerieDetailsViewDataPassedViewStates), String(describing: [expectedViewData]))
     }
+    
+    func test_presentEpisodesResponse_whenResponseIsLoading_shouldCallCorrectMethodInViewController() {
+        // Given
+        let viewControllerSpy = SerieDetailsDisplayLogicSpy()
+        let sut = makeSUT(viewController: viewControllerSpy)
+        let expectedViewData = SerieDetails.ViewState.loading
+
+        // When
+        sut.presentEpisodesResponse(.loading)
+
+        // Then
+        XCTAssertEqual(String(describing: viewControllerSpy.displayEpisodesViewStatePassedViewStates), String(describing: [expectedViewData]))
+    }
+    
+    func test_presentEpisodesResponse_whenResponseIsError_shouldCallCorrectMethodInViewController() {
+        // Given
+        let viewControllerSpy = SerieDetailsDisplayLogicSpy()
+        let sut = makeSUT(viewController: viewControllerSpy)
+        let expectedViewData = SerieDetails.ViewState.error
+
+        // When
+        sut.presentEpisodesResponse(.error)
+
+        // Then
+        XCTAssertEqual(String(describing: viewControllerSpy.displayEpisodesViewStatePassedViewStates), String(describing: [expectedViewData]))
+    }
+    
+    func test_presentEpisodesResponse_whenResponseIsContent_shouldCallCorrectMethodInViewController() {
+        // Given
+        let viewControllerSpy = SerieDetailsDisplayLogicSpy()
+        let sut = makeSUT(viewController: viewControllerSpy)
+        let expectedViewData = SerieDetails.ViewState.content([1: [.testMock]])
+        // When
+        sut.presentEpisodesResponse(.content(.mock))
+
+        // Then
+        XCTAssertEqual(String(describing: viewControllerSpy.displayEpisodesViewStatePassedViewStates), String(describing: [expectedViewData]))
+    }
 
     // MARK: - Test Helpers
 
@@ -61,6 +99,6 @@ final class SerieDetailsDisplayLogicSpy: SerieDetailsDisplayLogic {
 
 extension SerieDetails.Serie {
     static var testMock: SerieDetails.Serie {
-        .init(name: "Once Upon a Time", summary: "Test 1 Test 2 Test 3", imageURL: nil, schedule: "Schedule: Fridays", genres: "Genres: Drama")
+        .init(name: "Once Upon a Time", summary: "Test 1 Test 2 Test 3", imageURL: nil, schedule: "Schedule: Fridays at 22:00", genres: "Genres: Drama")
     }
 }

@@ -59,4 +59,7 @@ extension SerieDetails.Episode.ViewData {
     static var thirdEpisodeMock: SerieDetails.Episode.ViewData {
         .init(id: 3, name: "Truth, Changes, Everything", number: "S03 | E10", imageURL: nil)
     }
+    static var testMock: SerieDetails.Episode.ViewData {
+        .init(id: 1, name: "Test 1", number: "S01 | E01", imageURL: nil)
+    }
 }

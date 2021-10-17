@@ -241,13 +241,13 @@ final class NetworkDispatcherMock<T: Codable>: NetworkDispatcher {
 
 extension SeriesResponseEntity {
     static var mock: SeriesResponseEntity {
-        .init(id: 1, name: "Once Upon a Time", genres: ["Drama"], schedule: .init(time: "", days: [.friday]), image: .init(medium: "", original: ""), summary: "Test 1 Test 2 Test 3")
+        .init(id: 1, name: "Once Upon a Time", genres: ["Drama"], schedule: .init(time: "22:00", days: [.friday]), image: .init(medium: "", original: ""), summary: "Test 1 Test 2 Test 3")
     }
 }
 
 extension EpisodesResponseEntity {
     static var mock: EpisodesResponseEntity {
-        .init(id: 1, name: "Test", season: 1, number: 1, image: .init(medium: "", original: ""), summary: "Test 1 Test 2 Test 3")
+        .init(id: 1, name: "Test 1", season: 1, number: 1, image: .init(medium: "", original: ""), summary: "Test 1 Test 2 Test 3")
     }
 }
 
