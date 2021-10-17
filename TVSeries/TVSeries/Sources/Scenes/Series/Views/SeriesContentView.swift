@@ -16,6 +16,7 @@ final class SeriesContentView: CodedView {
     // MARK: - Dependencies
     
     private let onWillDisplayNewCells: (Int) -> Void
+    private let onTappedSerieClosure: (Int) -> Void
     
     // MARK: - Properties
     
@@ -42,9 +43,11 @@ final class SeriesContentView: CodedView {
 
     init(
         frame: CGRect = .zero,
-        onWillDisplayNewCells: @escaping (Int) -> Void
+        onWillDisplayNewCells: @escaping (Int) -> Void,
+        onTappedSerieClosure: @escaping (Int) -> Void
     ) {
         self.onWillDisplayNewCells = onWillDisplayNewCells
+        self.onTappedSerieClosure = onTappedSerieClosure
         super.init(frame: frame)
         configureView()
     }
@@ -143,5 +146,11 @@ extension SeriesContentView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         onWillDisplayNewCells(indexPath.row)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if case let .content(viewData) = viewState {
+            onTappedSerieClosure(viewData.series[indexPath.row].id)
+        }
     }
 }

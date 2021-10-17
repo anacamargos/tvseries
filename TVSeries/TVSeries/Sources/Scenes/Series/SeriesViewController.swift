@@ -16,6 +16,7 @@ final class SeriesViewController: UIViewController {
     // MARK: - Dependencies
     
     private let interactor: SeriesBusinessLogic
+    private let router: SeriesRoutingLogic
     private let mainDispatchQueue: DispatchQueueType
     
     // MARK: - View Components
@@ -26,9 +27,11 @@ final class SeriesViewController: UIViewController {
 
     init(
         interactor: SeriesBusinessLogic,
+        router: SeriesRoutingLogic,
         mainDispatchQueue: DispatchQueueType = DispatchQueue.main
     ) {
         self.interactor = interactor
+        self.router = router
         self.mainDispatchQueue = mainDispatchQueue
         super.init(nibName: nil, bundle: nil)
     }
@@ -48,7 +51,8 @@ final class SeriesViewController: UIViewController {
 
     override func loadView() {
         view = SeriesContentView(
-            onWillDisplayNewCells: { [weak self] row in self?.onWillDisplayNewCells(lasDisplayedRow: row) }
+            onWillDisplayNewCells: { [weak self] row in self?.onWillDisplayNewCells(lasDisplayedRow: row) },
+            onTappedSerieClosure: { [weak self] id in self?.handleSerieSelection(id) }
         )
         contentView = view as? SeriesContentViewProtocol
     }
@@ -71,6 +75,11 @@ final class SeriesViewController: UIViewController {
     
     private func onWillDisplayNewCells(lasDisplayedRow: Int) {
         interactor.checkPagination(lastDisplayedRow: lasDisplayedRow)
+    }
+    
+    private func handleSerieSelection(_ selectedId: Int) {
+        router.routeToSerieDetailsScene()
+        interactor.handleSerieSelection(selectedId)
     }
 }
 

@@ -11,9 +11,14 @@ protocol SeriesBusinessLogic {
     func onViewDidLoad()
     func checkPagination(lastDisplayedRow: Int)
     func search(for serieName: String)
+    func handleSerieSelection(_ selectedId: Int)
 }
 
-final class SeriesInteractor {
+protocol SeriesDataStore {
+    var selectedSerie: SeriesUseCaseModel.Serie? { get }
+}
+
+final class SeriesInteractor: SeriesDataStore {
     
     // MARK: - Dependencies
 
@@ -25,6 +30,7 @@ final class SeriesInteractor {
     private var page: Int = 0
     private var nextPageCalled: Bool = false
     private var series: SeriesUseCaseModel = .init(data: [])
+    var selectedSerie: SeriesUseCaseModel.Serie?
     
     // MARK: - Initialization
 
@@ -106,5 +112,10 @@ extension SeriesInteractor: SeriesBusinessLogic {
 
     func search(for seriesName: String) {
         searchSeries(with: seriesName)
+    }
+    
+    func handleSerieSelection(_ selectedId: Int) {
+        let selectedSerie = series.data.first(where: { $0.id == selectedId })
+        self.selectedSerie = selectedSerie
     }
 }

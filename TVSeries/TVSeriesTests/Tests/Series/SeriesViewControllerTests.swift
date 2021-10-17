@@ -66,6 +66,7 @@ final class SeriesInteractorDummy: SeriesBusinessLogic {
     func onViewDidLoad() {}
     func checkPagination(lastDisplayedRow: Int) {}
     func search(for serieName: String) {}
+    func handleSerieSelection(_ selectedId: Int) {}
 }
 
 final class SeriesInteractorSpy: SeriesBusinessLogic {
@@ -86,6 +87,12 @@ final class SeriesInteractorSpy: SeriesBusinessLogic {
     
     func search(for serieName: String) {
         searchNumberOfTimesCalled += 1
+    }
+    
+    private(set) var handleSerieSelectionNumberOfTimesCalled = 0
+    
+    func handleSerieSelection(_ selectedId: Int) {
+        handleSerieSelectionNumberOfTimesCalled += 1
     }
 }
 

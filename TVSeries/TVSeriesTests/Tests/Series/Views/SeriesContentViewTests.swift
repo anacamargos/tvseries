@@ -38,7 +38,7 @@ final class SeriesContentViewTests: XCTestCase {
     // MARK: - Private Methods
     
     private func makeView() -> SeriesContentView {
-        let view = SeriesContentView(onWillDisplayNewCells: { _ in })
+        let view = SeriesContentView(onWillDisplayNewCells: { _ in }, onTappedSerieClosure: { _ in })
         view.frame = .init(origin: .zero, size: CGSize(width: 350, height: 600))
         return view
     }

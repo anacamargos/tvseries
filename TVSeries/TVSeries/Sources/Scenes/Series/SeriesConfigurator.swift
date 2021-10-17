@@ -18,9 +18,12 @@ final class SeriesConfigurator {
         let service = SeriesService(networkDispatcher: networkDispatcher)
         let useCase = SeriesUseCase(service: service)
         
+        let configurator = SerieDetailsConfigurator()
         let presenter = SeriesPresenter()
         let interactor = SeriesInteractor(presenter: presenter, seriesUseCase: useCase)
-        let viewController = SeriesViewController(interactor: interactor)
+        let router = SeriesRouter(serieDetailsConfigurator: configurator, dataStore: interactor)
+        let viewController = SeriesViewController(interactor: interactor, router: router)
+        router.viewController = viewController
         presenter.viewController = viewController
         return viewController
     }

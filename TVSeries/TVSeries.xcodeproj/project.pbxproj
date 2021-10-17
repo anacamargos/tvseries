@@ -43,6 +43,8 @@
 		BFBD97C7271AFA7100232E60 /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD97C6271AFA7100232E60 /* EpisodeCell.swift */; };
 		BFBD97C9271C422200232E60 /* SeasonHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD97C8271C422200232E60 /* SeasonHeaderView.swift */; };
 		BFBD97CB271C51C200232E60 /* EpisodeCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD97CA271C51C200232E60 /* EpisodeCellTests.swift */; };
+		BFBD97CD271C680500232E60 /* SeriesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD97CC271C680500232E60 /* SeriesRouter.swift */; };
+		BFBD97CF271C698500232E60 /* SerieDetailsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD97CE271C698500232E60 /* SerieDetailsConfigurator.swift */; };
 		BFEDF9E927175AA700C11995 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEDF9E827175AA700C11995 /* AppDelegate.swift */; };
 		BFEDF9F227175AB100C11995 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFEDF9F127175AB100C11995 /* Assets.xcassets */; };
 		BFEDF9F527175AB100C11995 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFEDF9F327175AB100C11995 /* LaunchScreen.storyboard */; };
@@ -134,6 +136,8 @@
 		BFBD97C6271AFA7100232E60 /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
 		BFBD97C8271C422200232E60 /* SeasonHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonHeaderView.swift; sourceTree = "<group>"; };
 		BFBD97CA271C51C200232E60 /* EpisodeCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCellTests.swift; sourceTree = "<group>"; };
+		BFBD97CC271C680500232E60 /* SeriesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesRouter.swift; sourceTree = "<group>"; };
+		BFBD97CE271C698500232E60 /* SerieDetailsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieDetailsConfigurator.swift; sourceTree = "<group>"; };
 		BFEDF9E527175AA700C11995 /* TVSeries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVSeries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEDF9E827175AA700C11995 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFEDF9F127175AB100C11995 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -224,6 +228,7 @@
 				BF1BEE93271A0DDA00ACD9C0 /* Views */,
 				BF1BEE91271A0D8900ACD9C0 /* SerieDetailsViewController.swift */,
 				BFBD97C0271AF64500232E60 /* SerieDetailsModels.swift */,
+				BFBD97CE271C698500232E60 /* SerieDetailsConfigurator.swift */,
 			);
 			path = SerieDetails;
 			sourceTree = "<group>";
@@ -520,7 +525,6 @@
 			children = (
 				BF1BEE90271A0D7800ACD9C0 /* SerieDetails */,
 				BFEDFA6A271799B800C11995 /* Series */,
-				BF1BEE722719C91C00ACD9C0 /* SeriesInteractor.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -528,12 +532,14 @@
 		BFEDFA6A271799B800C11995 /* Series */ = {
 			isa = PBXGroup;
 			children = (
+				BF1BEE722719C91C00ACD9C0 /* SeriesInteractor.swift */,
 				BF96E46A2718BC920084654A /* Views */,
 				BFEDFA6B271799C400C11995 /* Domain */,
 				BF96E4682718BC540084654A /* SeriesViewController.swift */,
 				BF96E4772718CA7B0084654A /* SeriesModels.swift */,
 				BF1BEE702719C7AE00ACD9C0 /* SeriesPresenter.swift */,
 				BF1BEE742719CBA100ACD9C0 /* SeriesConfigurator.swift */,
+				BFBD97CC271C680500232E60 /* SeriesRouter.swift */,
 			);
 			path = Series;
 			sourceTree = "<group>";
@@ -810,6 +816,7 @@
 				BF1BEE8F271A08BD00ACD9C0 /* Strings.swift in Sources */,
 				BFEDFA3A27175FF500C11995 /* DefaultRequestBuilder.swift in Sources */,
 				BF96E4712718BCD80084654A /* UIView+Autolayout.swift in Sources */,
+				BFBD97CF271C698500232E60 /* SerieDetailsConfigurator.swift in Sources */,
 				BFEDFA2F27175F7E00C11995 /* URLParameters.swift in Sources */,
 				BFEDFA6227177B6A00C11995 /* SeriesRequest.swift in Sources */,
 				BFEDFA662717995B00C11995 /* EpisodesResponseEntity.swift in Sources */,
@@ -817,6 +824,7 @@
 				BFEDFA6027177AF400C11995 /* SeriesService.swift in Sources */,
 				BFEDFA2027175EBA00C11995 /* Status.swift in Sources */,
 				BFBD97C9271C422200232E60 /* SeasonHeaderView.swift in Sources */,
+				BFBD97CD271C680500232E60 /* SeriesRouter.swift in Sources */,
 				BFEDFA2B27175F4B00C11995 /* BaseURL.swift in Sources */,
 				BFEDFA542717748300C11995 /* JSONConvertible.swift in Sources */,
 				BF1BEE732719C91C00ACD9C0 /* SeriesInteractor.swift in Sources */,
