@@ -43,6 +43,29 @@ final class SerieDetailsInteractorTests: XCTestCase {
         XCTAssertEqual(String(describing: presenterSpy.presentSerieDetailsPassedResponses), String(describing: [expectedResponse]))
         XCTAssertEqual(String(describing: presenterSpy.presentEpisodesResponsePassedResponses), String(describing: [.loading, expectedResponseState]))
     }
+    
+    func test_handleEpisodeSelecion_shouldReturnCorrectSelectedEpisode() {
+        // Given
+        let useCaseStub = EpisodesUseCaseStub()
+        useCaseStub.executeResultToBeReturned = .success(.mock)
+        let presenterSpy = SerieDetailsPresenterSpy()
+        let sut = makeSUT(presenter: presenterSpy, episodesUseCase: useCaseStub)
+        let expectedResponse = SeriesUseCaseModel.Serie.mock
+        let expectedResponseState = SerieDetails.Response.content(.mock)
+
+        // When
+        sut.onViewDidLoad()
+        sut.handleEpisodeSelecion(1)
+
+        // Then
+        XCTAssertEqual(String(describing: presenterSpy.presentSerieDetailsPassedResponses), String(describing: [expectedResponse]))
+        XCTAssertEqual(String(describing: presenterSpy.presentEpisodesResponsePassedResponses), String(describing: [.loading, expectedResponseState]))
+        guard let selectedEpisode = sut.selectedEpisode else {
+            XCTFail("Could not find selectedEpisode")
+            return
+        }
+        XCTAssertEqual(String(describing: selectedEpisode), String(describing: EpisodesUseCaseModel.Episode.mock))
+    }
 
     // MARK: - Test Helpers
 

@@ -61,6 +61,25 @@ final class SerieDetailsViewControllerTests: XCTestCase {
         // Then
         XCTAssertEqual(String(describing: contentViewSpy.setupEpisodesViewStatePassedViewStates), String(describing: [expectedViewState]))
     }
+    
+    func test_handleSerieSelection_shouldCallCorrectMethodInInteractor() {
+        // Given
+        let interactorSpy = SerieDetailsInteractorSpy()
+        let routerSpy = SerieDetailsRouterSpy()
+        let sut = makeSUT(interactor: interactorSpy, router: routerSpy)
+        guard let contentView = sut.view as? SerieDetailsContentView else {
+            XCTFail("Could not find content view")
+            return
+        }
+        let onTappedEpisodeCellClosure = Mirror(reflecting: contentView).firstChild(of: ((Int) -> Void).self, in: "onTappedEpisodeCellClosure")
+        
+        // When
+        onTappedEpisodeCellClosure?(1)
+        
+        // Then
+        XCTAssertEqual(interactorSpy.handleEpisodeSelecionNumberOfTimesCalled, 1)
+        XCTAssertEqual(routerSpy.routeToEpisodeDetailsSceneNumberOfTimesCalled, 1)
+    }
 
     // MARK: - Private Methods
 
@@ -114,4 +133,13 @@ final class SerieDetailsContentViewSpy: SerieDetailsContentViewProtocol {
 
 final class SerieDetailsRouterDummy: SerieDetailsRoutingLogic {
     func routeToEpisodeDetailsScene() {}
+}
+
+final class SerieDetailsRouterSpy: SerieDetailsRoutingLogic {
+    
+    private(set) var routeToEpisodeDetailsSceneNumberOfTimesCalled = 0
+    
+    func routeToEpisodeDetailsScene() {
+        routeToEpisodeDetailsSceneNumberOfTimesCalled += 1
+    }
 }
