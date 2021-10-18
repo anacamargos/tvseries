@@ -16,6 +16,18 @@ With this app you can:
 - [x] For each episode you can see their respective names, numbers, seasons, summaries and images.
 - [x] Search for TV series.
 
+The project was made in the Clean Swift Architecture (VIP).
+
+Unit tests were made in the TVSeriesTests target, the project has 87,2% test coverage.
+
+**Dependencies:**
+
+- **Kingfisher** - Library for downloading images
+- **SwiftLint** - Tool to enforce best Swift style and conventions
+- **SnapshotTesting** - For snapshot tests on views / cells
+
+**Swiftgen** was also used to generate type-safe
+
 ## 🎥 Videos
 
 
