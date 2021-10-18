@@ -1,7 +1,7 @@
-<h1 align="center">📺 TVSeries</h1>
-<p align="center">An iOS application that lists TV series</p>
+<h1>📺 TVSeries</h1>
+<p>An iOS application that lists TV series</p>
 
-<p align="center">
+<p>
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/anacamargos/tvseries?color=ff69b4&style=flat-square"> 
   <img alt="GitHub issues" src="https://img.shields.io/badge/author-Ana%20Leticia%20Camargos-green?color=ff69b4&style=flat-square">
 </p>
