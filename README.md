@@ -31,6 +31,8 @@ Unit tests were made in the TVSeriesTests target, the project has 87,2% test cov
 ## 🎥 Videos
 
 
+https://user-images.githubusercontent.com/29712168/137798900-2b6a0dad-c0b9-4001-9890-c132985bc021.mov
+
 
 ## ✍️ Authors
 
