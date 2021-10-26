@@ -59,7 +59,7 @@ final class EpisodesUseCase: EpisodesUseCaseProvider {
         then: (Result<EpisodesUseCaseModel, EpisodesUseCaseError>) -> Void
     ) {
         let domainItems = input.map {
-            EpisodesUseCaseModel.Episode(id: $0.id, name: $0.name, season: $0.season, number: $0.number, image: .init(medium: $0.image.medium, original: $0.image.original), summary: $0.summary)
+            EpisodesUseCaseModel.Episode(id: $0.id, name: $0.name, season: $0.season, number: $0.number, image: .init(medium: $0.image?.medium ?? "", original: $0.image?.original ?? ""), summary: $0.summary)
         }
         let domainData = EpisodesUseCaseModel(data: domainItems)
         then(.success(domainData))

@@ -11,6 +11,6 @@ struct EpisodesResponseEntity: Codable {
     let id: Int
     let name: String
     let season, number: Int
-    let image: CommonEntity.Image
+    let image: CommonEntity.Image?
     let summary: String
 }
